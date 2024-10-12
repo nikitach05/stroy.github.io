@@ -11,7 +11,6 @@ export default defineConfig({
     //     outDir: './dist',
     //     rollupOptions: {
     //         input: [
-    //             './src/views/pages/**/*.njk',
     //             './src/scripts/index.js',
     //             './src/styles/index.scss'
     //         ]
