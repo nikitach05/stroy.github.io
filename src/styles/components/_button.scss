@@ -1,0 +1,45 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: slamp(.5rem, 1rem);
+    width: max-content;
+    padding: slamp(1.5rem, 2rem) slamp(3rem, 3.5rem);
+    cursor: pointer;
+    @include font(1.4rem, 1.6rem, var(--semibold), 100%);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2rem;
+    transition: .25s;
+    will-change: transform;
+    user-select: none;
+
+    &--primary {
+        color: var(--white);
+        background: var(--primary);
+
+        &:hover {
+            background: var(--accent);
+        }
+    }
+
+    &--trans {
+        border: .12rem solid var(--primary);
+
+        &:hover {
+            color: var(--white);
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+    }
+
+    img {
+        max-width: calc(var(--index) * 2);
+        height: auto;
+        -webkit-user-drag: none;
+    }
+
+    &:active {
+        transform: scale(.925);
+    }
+}

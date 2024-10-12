@@ -1,0 +1,16 @@
+@mixin font-face($f-name, $f-style, $f-weight, $f-url, $f-display) {
+    @font-face {
+        font-family: $f-name;
+        font-style: $f-style;
+        font-weight: $f-weight;
+        font-display: $f-display;
+        src: url($f-url) format('woff2');
+    }
+}
+
+@include font-face('GilroyLight', normal, 300, '../fonts/Gilroy/Gilroy-Light.woff2', swap);
+@include font-face('GilroyRegular', normal, normal, '../fonts/Gilroy/Gilroy-Regular.woff2', swap);
+@include font-face('GilroyMedium', normal, 500, '../fonts/Gilroy/Gilroy-Medium.woff2', swap);
+@include font-face('GilroyBold', normal, bold, '../fonts/Gilroy/Gilroy-Bold.woff2', swap);
+@include font-face('GilroyExtraBold', normal, 800, '../fonts/Gilroy/Gilroy-ExtraBold.woff2', swap);
+@include font-face('GilroySemiBold', normal, bold, '../fonts/Gilroy/Gilroy-SemiBold.woff2', swap);

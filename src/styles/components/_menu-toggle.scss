@@ -1,0 +1,39 @@
+.gmb-btn {
+    cursor: pointer;
+
+    &__line {
+        width: 18px;
+        height: 2px;
+        margin: 0;
+        background: #fff;
+        border-radius: 12px;
+        transition: .25s;
+
+        &:nth-child(2) {
+            margin-top: 3px;
+        }
+
+        &:nth-child(3) {
+            margin-top: 3px;
+        }
+    }
+
+    &--opened {
+
+        .gmb-btn__line {
+            &:nth-child(1) {
+                display: none;
+            }
+
+            &:nth-child(2) {
+                transform: rotate(45deg);
+                margin-top: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+                margin-top: -2px;
+            }
+        }
+    }
+}

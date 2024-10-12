@@ -1,0 +1,20 @@
+@use 'sass:math';
+
+// @function rem($px) {
+//     @return ($px / 16) +rem;
+// }
+// @function vw($px, $resolutiond: 1280) {
+// 	$temp: #{math.div($px, $resolutiond) * 100};
+// 	@return $temp +'vw';
+// }
+
+$resolution: 360;
+
+@function vw($px) {
+  @return (($px/$resolution) * 100) + vw;
+}
+
+@function path($image-name) {
+  $image-path: '../img/' + $image-name;
+  @return url($image-path);
+}
