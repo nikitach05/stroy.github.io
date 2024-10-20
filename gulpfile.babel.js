@@ -1,101 +1,125 @@
-// "use strict";
+"use strict";
 
-// import gulp from "gulp";
+import gulp from "gulp";
 
-// const requireDir = require("require-dir"),
-//     paths = {
-//         nunjucks: {
-//             src: [
-//                 "./src/views/pages/*.{nj,nunjucks}",
-//             ],
-//             templates: "./src/views/templates/",
-//             dist: "./dist/",
-//             watch: [
-//                 "./src/views/**/*.{nj,nunjucks}"
-//             ]
-//         },
-//         styles: {
-//             src: "./src/styles/main.{scss,sass}",
-//             dist: "./dist/styles/",
-//             watch: [
-//                 "./src/blocks/**/*.{scss,sass}",
-//                 "./src/styles/**/*.{scss,sass}"
-//             ]
-//         },
-//         scripts: {
-//             src: "./src/js/index.js",
-//             dist: "./dist/js/",
-//             watch: [
-//                 "./src/js/**/*.js"
-//             ]
-//         },
-//         libs: {
-//             src: "./src/js/libs/**/*.js",
-//             dist: "./dist/libs/"
-//         },
-//         images: {
-//             src: [
-//                 "./src/img/**/*.{jpg,jpeg,png,gif,tiff,svg,webp}",
-//                 "!./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}"
-//             ],
-//             dist: "./dist/img/",
-//             watch: "./src/img/**/*.{jpg,jpeg,png,gif,svg,webp}"
-//         },
-//         imgSizes: {
-//             src: [
-//                 "./dist/*.html",
-//             ],
-//             dist: "./dist/",
-//             watch: "./dist/*.{html}"
-//         },
-//         svg: {
-//             src: [
-//                 "./src/img/**/*.{svg}"
-//             ],
-//             dist: "./dist/img/",
-//             watch: "./src/img/**/*.{svg}"
-//         },
-//         video: {
-//             src: [
-//                 "./src/video/**/*.{mp4,webm}"
-//             ],
-//             dist: "./dist/video/",
-//             watch: "./src/video/**/*.{mp4,webm}"
-//         },
-//         sprites: {
-//             src: "./src/img/sprites/*.svg",
-//             dist: "./dist/img/sprites/",
-//             watch: "./src/img/sprites/*.svg"
-//         },
-//         fonts: {
-//             src: "./src/fonts/**/*.{woff,woff2}",
-//             dist: "./dist/fonts/",
-//             watch: "./src/fonts/**/*.{woff,woff2}"
-//         },
-//         favicons: {
-//             src: "./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}",
-//             dist: "./dist/img/favicons/",
-//         },
-//         gzip: {
-//             src: "./src/.htaccess",
-//             dist: "./dist/"
-//         },
-//         page: {
-//             styles: "./src/styles/pages/",
-//             nj: "./src/views/pages/",
-//             import: "./src/styles/pages/import/import.scss"
-//         },
-//     };
+// const requireDir = require('require-dir');
 
-// requireDir("./gulp-tasks/");
+const paths = {
+    nunjucks: {
+        src: [
+            "./src/views/pages/*.{nj,nunjucks}",
+        ],
+        templates: "./src/views/templates/",
+        dist: "./dist/",
+        watch: [
+            "./src/views/**/*.{nj,nunjucks}"
+        ]
+    },
+    styles: {
+        src: "./src/styles/main.{scss,sass}",
+        dist: "./dist/styles/",
+        watch: [
+            "./src/blocks/**/*.{scss,sass}",
+            "./src/styles/**/*.{scss,sass}"
+        ]
+    },
+    scripts: {
+        src: "./src/js/index.js",
+        dist: "./dist/js/",
+        watch: [
+            "./src/js/**/*.js"
+        ]
+    },
+    libs: {
+        src: "./src/js/libs/**/*.js",
+        dist: "./dist/libs/"
+    },
+    images: {
+        src: [
+            "./src/img/**/*.{jpg,jpeg,png,gif,tiff,svg,webp}",
+            "!./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}"
+        ],
+        dist: "./dist/img/",
+        watch: "./src/img/**/*.{jpg,jpeg,png,gif,svg,webp}"
+    },
+    imgSizes: {
+        src: [
+            "./dist/*.html",
+        ],
+        dist: "./dist/",
+        watch: "./dist/*.{html}"
+    },
+    svg: {
+        src: [
+            "./src/img/**/*.{svg}"
+        ],
+        dist: "./dist/img/",
+        watch: "./src/img/**/*.{svg}"
+    },
+    video: {
+        src: [
+            "./src/video/**/*.{mp4,webm}"
+        ],
+        dist: "./dist/video/",
+        watch: "./src/video/**/*.{mp4,webm}"
+    },
+    sprites: {
+        src: "./src/img/sprites/*.svg",
+        dist: "./dist/img/sprites/",
+        watch: "./src/img/sprites/*.svg"
+    },
+    fonts: {
+        src: "./src/fonts/**/*.{woff,woff2}",
+        dist: "./dist/fonts/",
+        watch: "./src/fonts/**/*.{woff,woff2}"
+    },
+    favicons: {
+        src: "./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}",
+        dist: "./dist/img/favicons/",
+    },
+    gzip: {
+        src: "./src/.htaccess",
+        dist: "./dist/"
+    },
+    page: {
+        styles: "./src/styles/pages/",
+        nj: "./src/views/pages/",
+        import: "./src/styles/pages/import/import.scss"
+    },
+};
 
-// export { paths };
+// requireDir("./gulp-tasks");
+
+export { paths };
+
+// global.app = {
+//   gulp,
+//   paths,
+// };
 
 // export const development = gulp.series("clean",
 //     gulp.parallel(["nunjucks", "styles", "scripts", "libs", "images", "sprites", 'video', "fonts"]),
 //     gulp.parallel("serve"));
 
-// export const prod = gulp.series("clean",
-//     gulp.parallel(["nunjucks", "styles", "scripts", "images", "sprites", "libs", 'video', 'svg', "fonts", "favicons", "gzip"]), "img-sizes");
+import { deleteSync } from "del";
 
-// export default development;
+gulp.task("clean", () => {
+    return deleteSync(["./dist/*"]);
+});
+
+import debug from "gulp-debug";
+
+gulp.task("gzip", () => {
+    return gulp.src(paths.gzip.src)
+        .pipe(gulp.dest(paths.gzip.dist))
+        .pipe(debug({
+            "title": "GZIP config"
+        }));
+});
+
+// export const build = gulp.series("clean",
+//     gulp.parallel(["gzip"]), "img-sizes");
+
+export const build = gulp.series("clean");
+
+export default build;

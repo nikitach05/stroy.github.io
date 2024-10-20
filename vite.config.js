@@ -38,9 +38,12 @@ export default defineConfig({
             output: {
                 chunkFileNames: "scripts/[name].js",
                 entryFileNames: "scripts/[name].js",
-                assetFileNames: (name) => {
-                    if (/\.css$/.test(name ?? "")) {
+                assetFileNames: (asset) => {
+                    if (/\.css$/.test(asset.name ?? "")) {
                         return "styles/[name].css"
+                    }
+                    if (/\.woff2$/.test(asset.name ?? "")) {
+                        return "fonts/[name].woff2"
                     }
                     return "assets/[name][extname]"
                 },
