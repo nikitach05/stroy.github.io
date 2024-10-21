@@ -5,7 +5,7 @@ import util from 'gulp-util';
 const rootFolder = nodePath.basename(nodePath.resolve());
 const buildFolder = './dist';
 const srcFolder = './src';
-// const assetsFolder = `${srcFolder}/assets`;
+const assetsFolder = `${srcFolder}/assets`;
 
 // Пути к папкам и файлам проекта
 const path = {
@@ -21,13 +21,13 @@ const path = {
     templates: `${srcFolder}/templates`,
     scripts: `${srcFolder}/scripts`,
     styles: `${srcFolder}/styles`,
-    images: `${srcFolder}/img`,
-    // svgicons: `${srcFolder}/svg-sprite/*.svg`,
+    images: `${assetsFolder}/img`,
+    svgicons: `${assetsFolder}/svg-sprite/*.svg`,
   },
   assets: {
-    images: `${srcFolder}/img/**/*.*`,
-    fonts: `${srcFolder}/fonts/**/*.{woff,woff2}`,
-    svgicons: `${srcFolder}/svg-sprite/*.svg`,
+    images: `${assetsFolder}/img/**/*.*`,
+    fonts: `${assetsFolder}/fonts/**/*.{woff,woff2}`,
+    svgicons: `${assetsFolder}/svg-sprite/*.svg`,
   },
 
   // Путь к нужной папке на удаленном сервере. gulp добавит имя папки проекта автоматически
@@ -40,6 +40,7 @@ const path = {
   buildFolder,
   rootFolder,
   srcFolder,
+  assetsFolder
 };
 
 // Настройка FTP соединения

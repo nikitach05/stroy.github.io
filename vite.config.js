@@ -1,7 +1,6 @@
 import { defineConfig } from "vite"
 
 import vituum from 'vituum'
-// import pages from 'vituum/plugins/pages.js'
 import nunjucks from '@vituum/vite-plugin-nunjucks'
 import { splitVendorChunkPlugin } from 'vite'
 
@@ -20,10 +19,6 @@ export default defineConfig({
     [
         splitVendorChunkPlugin(),
         vituum(),
-        // pages({
-        //     root: './src/views',
-        //     dir: './src/views/pages',
-        // }),
         nunjucks({
             root: './src',
             data: ['./src/data/**/*.json'],
@@ -32,7 +27,15 @@ export default defineConfig({
     server: {
         open: true
     },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                quietDeps: true
+            },
+        },
+    },
     build: {
+        manifest: false,
         modulePreload: false,
         rollupOptions: {
             output: {
@@ -42,8 +45,12 @@ export default defineConfig({
                     if (/\.css$/.test(asset.name ?? "")) {
                         return "styles/[name].css"
                     }
-                    if (/\.woff2$/.test(asset.name ?? "")) {
-                        return "fonts/[name].woff2"
+                    // if (/\.woff2$/.test(asset.name ?? "")) {
+                    //     return "fonts/[name].woff2"
+                    // }
+                    const formats = /\.(jpeg|jpg|png|webp|avif|heif|tiff)$/i;
+                    if (formats.test(asset.name ?? "")) {
+                        return `img/[name]${asset.name.match(formats)[0]}`; // Use the matched extension
                     }
                     return "assets/[name][extname]"
                 },

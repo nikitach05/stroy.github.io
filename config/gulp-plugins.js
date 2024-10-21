@@ -7,6 +7,8 @@ import rename from 'gulp-rename';
 import modifyFile from 'gulp-modify-file';
 import GulpRunner from 'gulp-run';
 
+console.log(modifyFile)
+
 // Экспортируем объект
 export const plugins = {
   notify,
