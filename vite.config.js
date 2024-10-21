@@ -4,6 +4,11 @@ import vituum from 'vituum'
 import nunjucks from '@vituum/vite-plugin-nunjucks'
 import { splitVendorChunkPlugin } from 'vite'
 
+import babel from "@rollup/plugin-babel"
+import resolvePlugin from "@rollup/plugin-node-resolve"
+import commonjs from "@rollup/plugin-commonjs"
+import terser from "@rollup/plugin-terser"
+
 export default defineConfig({
     // root: './',
     // build: {
@@ -48,13 +53,14 @@ export default defineConfig({
                     // if (/\.woff2$/.test(asset.name ?? "")) {
                     //     return "fonts/[name].woff2"
                     // }
-                    const formats = /\.(jpeg|jpg|png|webp|avif|heif|tiff)$/i;
+                    const formats = /\.(jpeg|jpg|gif|png|webp|avif|heif|tiff|svg)$/i;
                     if (formats.test(asset.name ?? "")) {
                         return `img/[name]${asset.name.match(formats)[0]}`; // Use the matched extension
                     }
                     return "assets/[name][extname]"
                 },
-            }
+            },
+            plugins: process.argv.includes('--mode=production') ? [resolvePlugin(), commonjs(), babel({ babelHelpers: 'bundled' }), terser()] : []
         }
     }
 })

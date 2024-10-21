@@ -4,10 +4,8 @@ import newer from 'gulp-newer';
 import plumber from 'gulp-plumber';
 import ifPlugin from 'gulp-if';
 import rename from 'gulp-rename';
-import modifyFile from 'gulp-modify-file';
+import replace from 'gulp-replace';
 import GulpRunner from 'gulp-run';
-
-console.log(modifyFile)
 
 // Экспортируем объект
 export const plugins = {
@@ -16,6 +14,6 @@ export const plugins = {
   newer,
   plumber,
   rename,
-  modifyFile,
+  replace,
   run: GulpRunner,
 };
