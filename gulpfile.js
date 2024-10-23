@@ -8,7 +8,7 @@ import { path } from './config/gulp-settings.js';
 // Импорт задач
 import { reset } from './config/gulp-tasks/reset.js';
 import { images } from './config/gulp-tasks/images.js';
-import { sprite } from './config/gulp-tasks/sprite.js';
+import { sprites } from './config/gulp-tasks/sprites.js';
 import {
   otfToTtf, ttfToWoff, moveFonts, fontsStyle,
 } from './config/gulp-tasks/fonts.js';
@@ -65,7 +65,7 @@ const serverDev = gulp.series(reset, fonts, gulp.parallel(fonts, images, 'viteBu
 
 // Экспорт задач
 export {
-  fonts, sprite, deployAll, images,
+  fonts, sprites, deployAll, images,
 };
 
 // Экспорт сценариев

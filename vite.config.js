@@ -53,9 +53,12 @@ export default defineConfig({
                     // if (/\.woff2$/.test(asset.name ?? "")) {
                     //     return "fonts/[name].woff2"
                     // }
-                    const formats = /\.(jpeg|jpg|gif|png|webp|avif|heif|tiff|svg)$/i;
+                    const formats = /\.(jpeg|jpg|gif|png|webp|avif|heif|tiff)$/i;
                     if (formats.test(asset.name ?? "")) {
                         return `img/[name]${asset.name.match(formats)[0]}`; // Use the matched extension
+                    }
+                    if (/sprite\.svg$/.test(asset.name ?? "")) {
+                        return "img/svg-sprite/[name].svg"
                     }
                     return "assets/[name][extname]"
                 },
