@@ -50,12 +50,13 @@ export default defineConfig({
                     if (/\.css$/.test(asset.name ?? "")) {
                         return "styles/[name].css"
                     }
-                    // if (/\.woff2$/.test(asset.name ?? "")) {
-                    //     return "fonts/[name].woff2"
-                    // }
-                    const formats = /\.(jpeg|jpg|gif|png|webp|avif|heif|tiff)$/i;
-                    if (formats.test(asset.name ?? "")) {
-                        return `img/[name]${asset.name.match(formats)[0]}`; // Use the matched extension
+                    const fontsExts = /\.(woff2)$/i;
+                    if (fontsExts.test(asset.name ?? "")) {
+                        return `fonts/[name]${asset.name.match(fontsExts)[0]}`;
+                    }
+                    const imgsExts = /\.(jpeg|jpg|gif|png|webp|avif|heif|tiff)$/i;
+                    if (imgsExts.test(asset.name ?? "")) {
+                        return `img/[name]${asset.name.match(imgsExts)[0]}`;
                     }
                     if (/sprite\.svg$/.test(asset.name ?? "")) {
                         return "img/svg-sprite/[name].svg"

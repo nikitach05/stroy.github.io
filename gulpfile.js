@@ -58,8 +58,7 @@ gulp.task('viteBuild', function() {
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, moveFonts, fontsStyle);
 const dev = gulp.series(reset, gulp.parallel(fonts, images), gulp.parallel('viteDev', localWatch));
-// const build = gulp.series(fonts, reset, gulp.parallel(images, 'viteBuild'), pathsRewrite);
-const build = gulp.series(reset, gulp.parallel('viteBuild'), images, pathsRewrite);
+const build = gulp.series(reset, gulp.parallel('viteBuild'), images, fonts, pathsRewrite);
 const deployHTML = gulp.series(build, deployAll);
 const serverDev = gulp.series(reset, fonts, gulp.parallel(fonts, images, 'viteBuild'), pathsRewrite, remoteWatch);
 
