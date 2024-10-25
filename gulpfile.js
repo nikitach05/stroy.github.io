@@ -15,7 +15,7 @@ import {
 import {
   deployAll, deployJS, deployCSS, deployIMG,
 } from './config/gulp-tasks/ftp.js';
-import { pathsRewrite } from './config/gulp-tasks/pathsRewrite.js';
+import { pathsRewriteHtml, pathsRewriteStyles } from './config/gulp-tasks/pathsRewrite.js';
 
 // Передаем значения в глобальную переменную
 global.app = {
@@ -58,9 +58,9 @@ gulp.task('viteBuild', function() {
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, moveFonts, fontsStyle);
 const dev = gulp.series(reset, gulp.parallel(fonts, images), gulp.parallel('viteDev', localWatch));
-const build = gulp.series(reset, gulp.parallel('viteBuild'), images, fonts, pathsRewrite);
+const build = gulp.series(reset, gulp.parallel('viteBuild'), images, fonts, pathsRewriteHtml, pathsRewriteStyles);
 const deployHTML = gulp.series(build, deployAll);
-const serverDev = gulp.series(reset, fonts, gulp.parallel(fonts, images, 'viteBuild'), pathsRewrite, remoteWatch);
+// const serverDev = gulp.series(reset, fonts, gulp.parallel(fonts, images, 'viteBuild'), pathsRewrite, remoteWatch);
 
 // Экспорт задач
 export {

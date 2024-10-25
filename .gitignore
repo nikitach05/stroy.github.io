@@ -8,19 +8,18 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+package-lock.json
 dist
 dist-ssr
 *.local
 +.js
 +.css
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
 .idea
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.env
+.yarn/cache
+.yarn/install-state.gz
+ehthumbs.db
+Thumbs.db
+.vscode/settings.json
