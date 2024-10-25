@@ -9,6 +9,7 @@ import { path } from './config/gulp-settings.js';
 import { reset } from './config/gulp-tasks/reset.js';
 import { images } from './config/gulp-tasks/images.js';
 import { sprites } from './config/gulp-tasks/sprites.js';
+import { gzip } from './config/gulp-tasks/gzip.js';
 import {
   otfToTtf, ttfToWoff, moveFonts, fontsStyle,
 } from './config/gulp-tasks/fonts.js';
@@ -58,13 +59,13 @@ gulp.task('viteBuild', function() {
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, moveFonts, fontsStyle);
 const dev = gulp.series(reset, gulp.parallel(fonts, images), gulp.parallel('viteDev', localWatch));
-const build = gulp.series(reset, gulp.parallel('viteBuild'), images, fonts, pathsRewriteHtml, pathsRewriteStyles);
+const build = gulp.series(reset, gulp.parallel('viteBuild'), images, fonts, pathsRewriteHtml, pathsRewriteStyles, gzip);
 const deployHTML = gulp.series(build, deployAll);
 // const serverDev = gulp.series(reset, fonts, gulp.parallel(fonts, images, 'viteBuild'), pathsRewrite, remoteWatch);
 
 // Экспорт задач
 export {
-  fonts, sprites, deployAll, images,
+  fonts, sprites, deployAll, images, gzip
 };
 
 // Экспорт сценариев
