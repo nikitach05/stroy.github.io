@@ -54,7 +54,7 @@ export default defineConfig({
                     if (fontsExts.test(asset.name ?? "")) {
                         return `fonts/[name]${asset.name.match(fontsExts)[0]}`;
                     }
-                    const imgsExts = /\.(jpeg|jpg|gif|png|webp|avif|heif|tiff)$/i;
+                    const imgsExts = /\.(jpeg|jpg|gif|png|webp|avif|heif|tiff|ico)$/i;
                     if (imgsExts.test(asset.name ?? "")) {
                         return `img/[name]${asset.name.match(imgsExts)[0]}`;
                     }

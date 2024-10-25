@@ -7,9 +7,11 @@ import { path } from './config/gulp-settings.js';
 
 // Импорт задач
 import { reset } from './config/gulp-tasks/reset.js';
-import { images } from './config/gulp-tasks/images.js';
+import { images, minifysvg } from './config/gulp-tasks/images.js';
 import { sprites } from './config/gulp-tasks/sprites.js';
+import { imgSizes } from './config/gulp-tasks/img-sizes.js';
 import { gzip } from './config/gulp-tasks/gzip.js';
+import { favicon } from './config/gulp-tasks/favicons.js';
 import {
   otfToTtf, ttfToWoff, moveFonts, fontsStyle,
 } from './config/gulp-tasks/fonts.js';
@@ -34,12 +36,6 @@ const localWatch = () => {
   gulp.watch(app.path.assets.fonts, gulp.series(fontsStyle, moveFonts));
 };
 
-const remoteWatch = () => {
-  gulp.watch(`${app.path.build.images}**/*.*`, gulp.series(deployIMG));
-  gulp.watch(`${app.path.build.scripts}**/*.*`, gulp.series(deployJS));
-  gulp.watch(`${app.path.build.styles}**/*.*`, gulp.series(deployCSS));
-};
-
 gulp.task('viteDev', function() {
 	const packageManager = process.env.npm_config_user_agent.split('/')[0];
 
@@ -59,13 +55,12 @@ gulp.task('viteBuild', function() {
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, moveFonts, fontsStyle);
 const dev = gulp.series(reset, gulp.parallel(fonts, images), gulp.parallel('viteDev', localWatch));
-const build = gulp.series(reset, gulp.parallel('viteBuild'), images, fonts, pathsRewriteHtml, pathsRewriteStyles, gzip);
+const build = gulp.series(reset, gulp.parallel('viteBuild'), images, fonts, pathsRewriteHtml, pathsRewriteStyles, imgSizes, gzip, minifysvg, favicon);
 const deployHTML = gulp.series(build, deployAll);
-// const serverDev = gulp.series(reset, fonts, gulp.parallel(fonts, images, 'viteBuild'), pathsRewrite, remoteWatch);
 
 // Экспорт задач
 export {
-  fonts, sprites, deployAll, images, gzip
+  fonts, sprites, deployAll, images, imgSizes, minifysvg, gzip, favicon
 };
 
 // Экспорт сценариев

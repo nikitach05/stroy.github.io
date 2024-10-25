@@ -1,4 +1,5 @@
 import sharpResponsive from 'gulp-sharp-responsive';
+import svgmin from "gulp-svgmin";
 
 const optionsBase = {
   formats: [
@@ -60,3 +61,8 @@ export const images = () => app.gulp
   .pipe(app.gulp.src([`${app.path.src.images}/**/*.*`, `!${app.path.src.images}/**/*.{jpeg,jpg,png,webp,avif,heif,tiff}`]))
   .pipe(app.plugins.newer(app.path.build.images))
   .pipe(app.gulp.dest(app.path.build.images));
+
+export const minifysvg = () => app.gulp
+  .src(`${app.path.build.svg}/*.svg`)
+  .pipe(svgmin())
+  .pipe(app.gulp.dest(app.path.build.svg));

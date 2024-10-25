@@ -1,15 +1,15 @@
-$default-width: 136rem;
+$default-width: r(1360);
 
-$padding-min-x: 1.6rem;
-$padding-max-x: 4.8rem;
+$padding-min-x: r(16);
+$padding-max-x: r(48);
 
-$padding-min-y: 3.2rem;
-$padding-max-y: 4.8rem;
+$padding-min-y: r(32);
+$padding-max-y: r(48);
 
-$scrollbar-gap: .8rem;
+$scrollbar-gap: r(8);
 
-$modal-gap: 12rem;
-$modal-margin-top: 5rem;
+$modal-gap: r(120);
+$modal-margin-top: r(50);
 
 .modal {
     position: fixed;
@@ -48,8 +48,8 @@ $modal-margin-top: 5rem;
         position: absolute;
         top: -1.2rem;
         right: 0;
-        width: 4.8rem;
-        height: 4.8rem;
+        width: r(48);
+        height: r(48);
         border-radius: 50%;
         cursor: pointer;
         background-color: var(--white);
@@ -57,7 +57,7 @@ $modal-margin-top: 5rem;
         transform: translate(100%, -100%);
         
         svg {
-            @include sprite-size(2rem, 2rem);
+            @include sprite-size(r(20), r(20));
 
             use {
                 stroke-linecap: round;
@@ -85,7 +85,7 @@ $modal-margin-top: 5rem;
         width: 100%;
         max-height: calc(100vh - $modal-gap);
         margin: $modal-margin-top 0 0;
-        border-radius: slamp(2rem, 4rem);
+        border-radius: slamp(r(20), r(40));
         background: var(--white);
         padding: slamp($padding-min-y, $padding-max-y) 0;
         padding-right: $scrollbar-gap;

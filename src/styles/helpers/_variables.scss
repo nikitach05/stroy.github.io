@@ -25,10 +25,14 @@
 }
 
 // Indent
-$min-indent: 3rem;
-$max-indent: 6rem;
+$min-indent: r(30);
+$max-indent: r(60);
 
-// settings for include-media module
+// Container
+$container-gap: r(15);
+$container-default-width: r(1390);
+
+// Settings for include-media module
 $xss: 420px;
 $xs: 578px;
 $sm: 768px;
@@ -43,12 +47,13 @@ $breakpoints: (
     'md': $md,
     'lg': $lg,
     'xl': $xl ) !default;
+
 $unit-intervals: (
     'px': 0.5,
     'em': 0.01,
     'rem': 0.05) !default;
 
-// scss-slamp
+// Scss-slamp
 $slamp_options: (
     'root-size': 10px,
     'min': 578px,

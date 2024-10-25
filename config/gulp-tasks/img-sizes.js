@@ -1,14 +1,10 @@
-"use strict";
-
-import { paths } from "../gulpfile.babel";
-import gulp from "gulp";
-import debug from "gulp-debug";
 import sizeOf from "image-size";
 import through2 from "through2";
-import cheerio from "cheerio";
+import * as cheerio from 'cheerio';
 
-gulp.task('img-sizes', function() {
-  return gulp.src(paths.imgSizes.src)
+export const imgSizes = () => (
+  app.gulp
+    .src(`${app.path.buildFolder}/**/*.html`)
     .pipe(through2.obj(function(file, enc, cb) {
       if (file.isBuffer()) {
         const $ = cheerio.load(file.contents.toString());
@@ -29,11 +25,8 @@ gulp.task('img-sizes', function() {
 
       cb(null, file);
     }))
-    .pipe(gulp.dest(paths.imgSizes.dist))
-    .pipe(debug({
-        "title": "img-sizes"
-      }));
-});
+    .pipe(app.gulp.dest(app.path.buildFolder))
+);
 
 // Cheerio - это модуль, который предоставляет простой и удобный способ парсить и манипулировать HTML-данными. Он позволяет использовать синтаксис и функции, аналогичные тем, которые предоставляет jQuery, для выбора и изменения элементов HTML.
 

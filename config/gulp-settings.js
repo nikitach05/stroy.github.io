@@ -14,6 +14,7 @@ const path = {
     scripts: `${buildFolder}/scripts/`,
     styles: `${buildFolder}/styles/`,
     images: `${buildFolder}/img/`,
+    svg: `${buildFolder}/img/svg/`,
     fonts: `${buildFolder}/fonts/`,
     files: `${buildFolder}/files/`,
   },
