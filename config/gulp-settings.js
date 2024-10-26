@@ -23,12 +23,12 @@ const path = {
     scripts: `${srcFolder}/scripts`,
     styles: `${srcFolder}/styles`,
     images: `${assetsFolder}/img`,
-    svgicons: `${assetsFolder}/svg-sprite/*.svg`,
+    svgicons: `${assetsFolder}/img/svg-sprite/*.svg`,
   },
   assets: {
     images: `${assetsFolder}/img/**/*.*`,
     fonts: `${assetsFolder}/fonts/**/*.{woff,woff2}`,
-    svgicons: `${assetsFolder}/svg-sprite/*.svg`,
+    svgicons: `${assetsFolder}/img/svg-sprite/*.svg`,
   },
 
   // Путь к нужной папке на удаленном сервере. gulp добавит имя папки проекта автоматически

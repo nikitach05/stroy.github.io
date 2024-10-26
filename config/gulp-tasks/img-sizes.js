@@ -12,12 +12,15 @@ export const imgSizes = () => (
         $('img').each(function() {
           const img = $(this);
           const imagePath = img.attr('src');
-          const dimensions = sizeOf(`dist/${imagePath}`);
-          const width = dimensions.width;
-          const height = dimensions.height;
 
-          img.attr('width', width);
-          img.attr('height', height);
+          if (!imagePath.startsWith('data:image')) {
+            const dimensions = sizeOf(`dist/${imagePath}`);
+            const width = dimensions.width;
+            const height = dimensions.height;
+
+            img.attr('width', width);
+            img.attr('height', height);
+          }
         });
 
         file.contents = Buffer.from($.html());
