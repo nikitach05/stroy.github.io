@@ -138,7 +138,7 @@ const fontsStyle = () => {
     const woffName = fontFileName.replace(/woff2/i, 'woff');
     const hasWoff = fontsFiles.includes(woffName);
 
-    appendFileSync(fontsFilePath, `@font-face {\n\tfont-family: ${fontName};\n\tfont-display: swap;\n\tsrc: url("../fonts/${fontFileName}") format("woff2")${hasWoff ? ` , url("../fonts/${woffName}") format("woff")` : ''};\n\tfont-weight: ${fontWeight};\n\tfont-style: ${fontStyle};\n}\n\r\n`, (err) => {
+    appendFileSync(fontsFilePath, `@font-face {\n\tfont-family: '${fontName}';\n\tfont-display: swap;\n\tsrc: url("../assets/fonts/${fontFileName}") format("woff2")${hasWoff ? ` , url("../assets/fonts/${woffName}") format("woff")` : ''};\n\tfont-weight: ${fontWeight};\n\tfont-style: ${fontStyle};\n}\n\r\n`, (err) => {
       if (err) {
         throw Error(err);
       }

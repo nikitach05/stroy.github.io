@@ -11,5 +11,6 @@ export const pathsRewriteStyles = () => (
   app.gulp
     .src(`${app.path.build.styles}/**/*.css`)
     .pipe(app.plugins.replace(/\/img/gi, '../img'))
+    .pipe(app.plugins.replace(/\/fonts/gi, '../fonts'))
     .pipe(app.gulp.dest(app.path.build.styles))
 );
