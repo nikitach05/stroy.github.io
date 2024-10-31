@@ -11,11 +11,11 @@ import SwitchBlockByTab from '../components/switchBlockByTab';
 import LiteYTEmbed from '../components/lite-ytembed';
 import { slideToggle } from '../components/slide-toggle';
 import modalToggle from '../components/modal-toggle';
-
-// const WOW = require('wowjs');
+// import WOW from 'wow.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // new WOW().init();
   new Modal();
   new ItcMoveEl();
   new modalToggle();
@@ -36,11 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const text = selected ? selected.textContent : '';
     console.log(`Выбранный текст опции: ${text}`);
   });
-
-  // window.wow = new WOW.WOW({
-  //     live: false
-  // });
-  // window.wow.init();
 
     // Mobile menu btn toggle
 	// const btnToggle = document.querySelector('.menu-toggle');
