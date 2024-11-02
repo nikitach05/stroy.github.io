@@ -1,4 +1,4 @@
-export function slideUp(el, duration) {
+export function slideUp(el, duration = 300, displayDefault = 'block') {
   el.style.transitionProperty = 'height, margin, padding';
   el.style.transitionDuration = duration + 'ms';
   el.style.boxSizing = 'border-box';
@@ -24,11 +24,11 @@ export function slideUp(el, duration) {
   }, duration);
 }
 
-export function slideDown(el, duration) {
+export function slideDown(el, duration = 300, displayDefault = 'block') {
   el.style.removeProperty('display');
   let display = window.getComputedStyle(el).display;
   if (display === 'none')
-    display = 'block';
+    display = displayDefault;
   el.style.display = display;
   let height = el.offsetHeight;
   el.style.overflow = 'hidden';
@@ -55,10 +55,10 @@ export function slideDown(el, duration) {
   }, duration);
 }
 
-export function slideToggle(el, duration) {
+export function slideToggle(el, duration = 300, displayDefault = 'block') {
   if (window.getComputedStyle(el).display === 'none') {
-    slideDown(el, duration);
+    slideDown(el, duration, displayDefault);
   } else {
-    slideUp(el, duration);
+    slideUp(el, duration, displayDefault);
   }
 }

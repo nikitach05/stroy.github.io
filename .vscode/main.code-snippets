@@ -246,7 +246,7 @@
   "sprite": {
     "prefix": "sprite",
     "body": [
-        "<svg><use href=\"img/sprites/sprite.svg#$0\"></use></svg>"
+        "<svg><use href=\"/src/assets/img/svg-sprite/sprite.svg#$0\"></use></svg>"
     ]
   },
   "data-move-el": {
