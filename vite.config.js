@@ -10,16 +10,6 @@ import commonjs from "@rollup/plugin-commonjs"
 import terser from "@rollup/plugin-terser"
 
 export default defineConfig({
-    // root: './',
-    // build: {
-    //     outDir: './dist',
-    //     rollupOptions: {
-    //         input: [
-    //             './src/scripts/index.js',
-    //             './src/styles/index.scss'
-    //         ]
-    //     }
-    // },
     plugins:
     [
         splitVendorChunkPlugin(),
@@ -40,6 +30,7 @@ export default defineConfig({
         },
     },
     build: {
+        assetsInlineLimit: 0,
         manifest: false,
         modulePreload: false,
         rollupOptions: {
@@ -57,6 +48,9 @@ export default defineConfig({
                     const imgsExts = /\.(jpeg|jpg|gif|png|webp|avif|heif|tiff|ico)$/i;
                     if (imgsExts.test(asset.name ?? "")) {
                         return `img/[name]${asset.name.match(imgsExts)[0]}`;
+                    }
+                    if (/\.svg$/.test(asset.name ?? "")) {
+                        return "img/svg/[name].svg";
                     }
                     if (/sprite\.svg$/.test(asset.name ?? "")) {
                         return "img/svg-sprite/[name].svg"

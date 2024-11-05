@@ -1,6 +1,7 @@
 // Modules
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import PhotoSwipe from 'photoswipe';
+import { OverlayScrollbars } from 'overlayscrollbars';
 
 // Compoments
 import ItcCustomSelect from '../components/itc-custom-select';
@@ -19,6 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
   new Modal();
   new ItcMoveEl();
   new modalToggle();
+
+  const modals = document.querySelectorAll('.modal__content');
+  modals.forEach(modal => {
+    OverlayScrollbars(modal, {});
+  });
 
   // Example SwitchBlockByTab
   new SwitchBlockByTab('.tabs__item', '.blocks__item');

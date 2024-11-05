@@ -150,3 +150,10 @@ a:focus-visible {
 .pswp__button--arrow--prev {
     transform: rotate(180deg);
 }
+
+// Overlayscrollbars
+.os-scrollbar,
+.os-scrollbar.os-theme-dark {
+    --os-track-bg: var(--gray);
+    --os-handle-bg: var(--primary);
+}
