@@ -8,20 +8,20 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1.2rem;
-    @include font(1.6rem);
+    padding: r(12);
+    @include font(r(16));
     background-color: var(--white);
-    border: 1px solid #cacaca;
-    border-radius: 3px;
+    border: 1px solid var(--gray);
+    border-radius: r(3);
     cursor: pointer;
     user-select: none;
 
     &::after {
         content: '';
         flex-shrink: 0;
-        width: 1.2rem;
-        height: 0.8rem;
-        margin-left: 1rem;
+        width: r(12);
+        height: r(8);
+        margin-left: r(10);
         background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 1L5 4L1.5 1' stroke='%23151B28' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
         background-size: contain;
         background-repeat: no-repeat;
@@ -33,7 +33,7 @@
     }
 
     &[data-index="-1"] {
-        color: #cacaca;
+        color: var(--gray);
     }
 }
 
@@ -48,10 +48,10 @@
     left: 0;
     z-index: 2;
     display: none;
-    max-height: 200px;
+    max-height: r(200);
     overflow-y: auto;
     background-color: var(--white);
-    border: 1px solid #cacaca;
+    border: 1px solid var(--gray);
     border-radius: .3rem;
 }
 
@@ -81,9 +81,9 @@
     background-color: #e1f5fe;
 
     &::after {
-        width: 0.75rem;
-        height: 0.75rem;
-        color: #0277bd;
+        width: r(8);
+        height: r(8);
+        color: var(--primary);
         background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-inline--fa fa-check fa-w-16" data-icon="check" data-prefix="fas" aria-hidden="true"%3E%3Cpath d="M33.964 85.547l-32.5-32.251a4.935 4.935 0 010-7.017l7.071-7.017a5.027 5.027 0 017.071 0L37.5 60.987l46.894-46.534a5.028 5.028 0 017.07 0l7.072 7.017a4.935 4.935 0 010 7.017l-57.5 57.06a5.027 5.027 0 01-7.072 0z" fill="%230277bd"/%3E%3C/svg%3E');
         background-size: cover;
         content: "";

@@ -9,16 +9,16 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 1rem;
-        height: 1rem;
+        width: r(10);
+        height: r(10);
         opacity: 0;
         z-index: -100;
     }
 
     &__box {
         flex-shrink: 0;
-        width: 2.2rem;
-        height: 2.2rem;
+        width: r(22);
+        height: r(22);
         border: 1px solid var(--text);
         background-color: transparent;
         background-repeat: no-repeat;
@@ -38,9 +38,10 @@
     }
 
     &__label {
-        max-width: 70rem;
-        margin: 0 0 0 1.4rem;
-        @include font(1.4rem, null, null, 120%);
+        max-width: r(700);
+        margin: 0 0 0 r(14);
+        @include font(r(14));
+        line-height: 120%;
         color: var(--text);
         cursor: pointer;
     }

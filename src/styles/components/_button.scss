@@ -6,7 +6,8 @@
     width: max-content;
     padding: slamp(r(15), r(20)) slamp(r(30), r(35));
     cursor: pointer;
-    @include font(1.4rem, 1.6rem, var(--semibold), 100%);
+    @include font(r(14), r(16), 500);
+    line-height: 100%;
     text-align: center;
     text-decoration: none;
     border-radius: r(20);
