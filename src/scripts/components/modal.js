@@ -1,46 +1,59 @@
 export default class Modal {
     constructor() {
-        this._els = document.querySelectorAll('.modal');
-        this._btns = document.querySelectorAll('[data-modal]');
-        this._closes = document.querySelectorAll('[data-modal-close]');
         this._init();
     }
-    _init() {
-        this._btns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                let modalID = btn.dataset.modal;
-                let modal = document.querySelector(`#${modalID}`);
 
-                // Open modal
-                document.body.append(modal);
-                modal.classList.add('modal--opened');
-            });
+    _init() {
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-modal]');
+            if (btn) {
+                e.preventDefault();
+                const modalID = btn.dataset.modal;
+                const modal = document.querySelector(`#${modalID}`);
+
+                if (modal) {
+                    // Открытие модального окна
+                    document.body.append(modal);
+                    modal.classList.add('modal--opened');
+                    requestAnimationFrame(() => {
+                        modal.classList.add('modal--animated');
+                    });
+
+                    document.body.classList.add('hidden');
+                }
+            }
         });
 
-        this._els.forEach(modal => {
-            modal.addEventListener('click', (e) => {
-                let target = e.target;
-                let excludedElement = modal.querySelector('.modal__wrapper');
-                if (!excludedElement.contains(target)) {
+        document.addEventListener('click', (e) => {
+            const modal = e.target.closest('.modal');
+            if (modal) {
+                const excludedElement = modal.querySelector('.modal__wrapper');
+                if (!excludedElement.contains(e.target)) {
                     this._closeModal(modal);
                 }
-            });
+            }
         });
 
-        // Close modal by attribute
-        this._closes.forEach(btn => {
-            btn.addEventListener('click', (e) => {
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-modal-close]');
+            if (btn) {
                 e.preventDefault();
-                let modal = btn.closest('.modal');
-                this._closeModal(modal);
-            });
+                const modal = btn.closest('.modal');
+                if (modal) {
+                    this._closeModal(modal);
+                }
+            }
         });
     }
+
     _closeModal(modal) {
         modal.classList.remove('modal--opened');
-        // Dispatch the custom event
-        const customEvent = new CustomEvent('modalClose', { detail: { ['modal']: modal }});
+        modal.classList.remove('modal--animated');
+
+        // Диспатч кастомного события
+        const customEvent = new CustomEvent('modalClose', { detail: { modal } });
         document.dispatchEvent(customEvent);
+
+        document.body.classList.remove('hidden');
     }
 }

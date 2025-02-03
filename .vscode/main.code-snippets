@@ -47,6 +47,26 @@
       "{% endblock %}"
     ]
   },
+  "Nj-include": {
+    "prefix": "njinc",
+    "body": [
+      "{% include \"components/$0\" %}"
+    ]
+  },
+  "Nj-macro": {
+    "prefix": "njmacro",
+    "body": [
+      "{% macro $0() %}",
+      "{% endmacro %}"
+    ]
+  },
+  "Nj-for": {
+    "prefix": "njfor",
+    "body": [
+      "{% for item in $0 %}",
+      "{% endfor %}"
+    ]
+  },
   "Media-xxs": {
     "prefix": "<xxs",
     "body": [
