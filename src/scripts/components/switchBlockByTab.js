@@ -1,8 +1,8 @@
 export default class SwitchBlockByTab {
 
     constructor(tabs, blocks) {
-        this.tabs = document.querySelectorAll(tabs);
-        this.blocks = document.querySelectorAll(blocks);
+        this.tabs = typeof tabs === 'string' ? document.querySelectorAll(tabs) : tabs;
+        this.blocks = typeof tabs === 'string' ? document.querySelectorAll(blocks) : blocks;
         this.init();
     }
 
