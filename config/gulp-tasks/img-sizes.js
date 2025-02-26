@@ -13,7 +13,7 @@ export const imgSizes = () => (
           const img = $(this);
           const imagePath = img.attr('src');
 
-          if (!imagePath.startsWith('data:image')) {
+          if (!imagePath.startsWith('data:image') && !imagePath.startsWith('http')) {
             const dimensions = sizeOf(`dist/${imagePath}`);
             const width = dimensions.width;
             const height = dimensions.height;
