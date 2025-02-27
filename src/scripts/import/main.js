@@ -8,7 +8,7 @@ import ItcCustomSelect from '../components/itc-custom-select';
 import ItcMoveEl from "../components/move-elements";
 import Modal from '../components/modal';
 import MaskPhone from "../components/maskPhone";
-import SwitchBlockByTab from '../components/switchBlockByTab';
+import ShowBlockByTab from '../components/show-block-by-tab';
 import LiteYTEmbed from '../components/lite-ytembed';
 import { slideToggle } from '../components/slide-toggle';
 import modalToggle from '../components/modal-toggle';
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     OverlayScrollbars(modal, {});
   });
 
-  // Example SwitchBlockByTab
-  new SwitchBlockByTab('.tabs__item', '.blocks__item');
+  // Example ShowBlockByTab
+  new ShowBlockByTab('.tabs-container');
 
   // Example ItcCustomSelect
   const select = new ItcCustomSelect('.custom-select');
