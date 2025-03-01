@@ -53,11 +53,14 @@
     "vituum": "^1.1.1"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "animate.css": "^4.1.1",
     "overlayscrollbars": "^2.2.0",
-    "photoswipe": "^5.3.8",
     "swiper": "^10.2.0",
     "validatorjs": "^3.22.1",
-    "wow.js": "^1.2.2"
+    "wow.js": "^1.2.2",
+    "@studio-freight/lenis": "^0.2.28",
+    "gsap": "^3.11.4",
+    "splitting": "^1.0.6"
   }
 }

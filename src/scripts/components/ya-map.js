@@ -1,17 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-if (document.querySelector('#map')) {
+const mapElement = document.querySelector('#map');
+if (mapElement) {
 	let myMap;
 	function init() {
+		const coords = mapElement.dataset.coords;
+		const coordsCenter = mapElement.dataset.coordsCenter;
+		const markerSrc = mapElement.dataset.marker;
+		
 		// Map
 		myMap = new ymaps.Map('map', {
-			center: [55.801022901774175,37.595980101852234],
+			center: JSON.parse(coordsCenter),
 			zoom: 15,
 			controls: []
 		});
 
 		const balloon = {
 			iconLayout: 'default#image',
-			iconImageHref: 'img/svg/marker-map.svg',
+			iconImageHref: markerSrc,
 			iconImageSize: [108, 115],
 			iconImageOffset: [-56, -110],
 			// balloonContentSize: [302, 194],
@@ -23,7 +28,7 @@ if (document.querySelector('#map')) {
 
 		myMap.geoObjects.add(
 			new ymaps.Placemark(
-				[55.801022901774175,37.595980101852234],
+				JSON.parse(coords),
 				{
 					balloonContent: '<div class="balloon"><p><b>БЦ “Станколит”</b></p><p>Складочная ул.,1, стр. 1, подъезд 11</p><p></div>'
 				},

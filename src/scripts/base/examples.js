@@ -1,0 +1,45 @@
+// Modules
+import Lenis from '@studio-freight/lenis'
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
+import Splitting from "splitting";
+import WOW from 'wow.js';
+
+// Compoments
+import ItcCustomSelect from '../components/itc-custom-select';
+import ItcMoveEl from "../components/move-elements";
+import ShowBlockByTab from '../components/show-block-by-tab';
+import { slideToggle } from '../components/slide-toggle';
+import modalToggle from '../components/modal-toggle';
+import AnchorScroll from '../components/anchor-scroll';
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    new WOW().init();
+    new ItcMoveEl();
+    new modalToggle();
+
+    // Example ShowBlockByTab
+    new ShowBlockByTab('.tabs-container');
+
+    // Example ItcCustomSelect
+    const select = new ItcCustomSelect('.custom-select');
+    document.querySelector('.custom-select').addEventListener('itc.select.change', (e) => {
+        const btn = e.target.querySelector('.itc-select__toggle');
+        // выбранное значение
+        console.log(`Выбранное значение: ${btn.value}`);
+        // индекс выбранной опции
+        console.log(`Индекс выбранной опции: ${btn.dataset.index}`);
+        // выбранный текст опции
+        const selected = e.target.querySelector('.itc-select__option_selected');
+        const text = selected ? selected.textContent : '';
+        console.log(`Выбранный текст опции: ${text}`);
+    });
+
+    // AnchorScroll
+    new AnchorScroll(100);
+    
+});
