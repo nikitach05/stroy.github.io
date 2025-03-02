@@ -1,20 +1,20 @@
 // Modules
-import Lenis from '@studio-freight/lenis'
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from "@studio-freight/lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import WOW from 'wow.js';
+import WOW from "wow.js";
 
 // Compoments
-import ItcCustomSelect from '../components/itc-custom-select';
+import ItcCustomSelect from "../components/itc-custom-select";
 import ItcMoveEl from "../components/move-elements";
-import ShowBlockByTab from '../components/show-block-by-tab';
-import { slideToggle } from '../components/slide-toggle';
-import modalToggle from '../components/modal-toggle';
-import AnchorScroll from '../components/anchor-scroll';
-import isMobile from '../helpers/isMobile';
+import ShowBlockByTab from "../components/show-block-by-tab";
+import { slideToggle } from "../components/slide-toggle";
+import modalToggle from "../components/modal-toggle";
+import AnchorScroll from "../components/anchor-scroll";
+import isMobile from "../helpers/isMobile";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 	new WOW().init();
 	new ItcMoveEl();
 	new modalToggle();
@@ -63,4 +63,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Lenis (smooth scrolling)
 	initSmoothScrolling();
+
 });
