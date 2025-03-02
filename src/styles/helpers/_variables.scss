@@ -4,6 +4,7 @@
     --accent: #5a5aa7;
     --text: #111827;
     --white: white;
+    --gray: gray;
     --error: #B4241A;
     
     // Index
@@ -13,7 +14,7 @@
     --regular: 'Gilroy';
 
     // Transition
-    --transition: .25s cubic-bezier(.2, .5, 0, 1);
+    --transition: .3s cubic-bezier(.2, .5, 0, 1);
 
     // Box-shadow
     --box-shadow: 0 4px 8px 0 rgba(113, 128, 150, .08), 0 0 1px 0 rgba(113, 128, 150, .04);
@@ -28,7 +29,7 @@ $container-gap: r(15);
 $container-default-width: r(1390);
 
 // Settings for include-media module
-$xss: 420px;
+$xxs: 420px;
 $xs: 578px;
 $sm: 768px;
 $md: 992px;
@@ -36,7 +37,7 @@ $lg: 1280px;
 $xl: 1480px;
 
 $breakpoints: (
-    'xxs': $xss,
+    'xxs': $xxs,
     'xs': $xs,
     'sm': $sm,
     'md': $md,
