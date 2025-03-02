@@ -60,7 +60,6 @@
     "validatorjs": "^3.22.1",
     "wow.js": "^1.2.2",
     "@studio-freight/lenis": "^0.2.28",
-    "gsap": "^3.11.4",
-    "splitting": "^1.0.6"
+    "gsap": "^3.11.4"
   }
 }
