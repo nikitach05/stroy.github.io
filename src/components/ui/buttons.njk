@@ -1,0 +1,5 @@
+{% macro button(text, class = '', attrs = '') %}
+<div class="{{class}} btn btn--primary" {% if attrs %} {{ attrs }} {% endif %}>
+    {{text}}
+</div>
+{% endmacro %}

@@ -7,7 +7,8 @@
 
     <!-- Example Modal -->
     <section class="p-indent">
-        <button data-modal="modal-1">Modal</button>
+        {% import "components/ui/buttons.njk" as buttons %}
+        {{buttons.button('Кнопка', 'main__btn', 'data-modal=modal-1')}}
 
         <div class="modal" id="modal-1">
             <div class="modal__wrapper">
