@@ -1,10 +1,6 @@
 html {
     font-size: 62.5%;
     // scroll-behavior: smooth;
-
-    @include media('<xl', '>=lg') {
-        font-size: 56%;
-    }
 }
 
 html,
@@ -153,14 +149,14 @@ a:focus-visible {
 }
 
 // Pswp
-.pswp {
-    --pswp-bg: rgba(156, 163, 175, .6);
-    --pswp-icon-color-secondary: transparent;
-}
+// .pswp {
+//     --pswp-bg: rgba(156, 163, 175, .6);
+//     --pswp-icon-color-secondary: transparent;
+// }
 
-.pswp__button--arrow--prev {
-    transform: rotate(180deg);
-}
+// .pswp__button--arrow--prev {
+//     transform: rotate(180deg);
+// }
 
 // Overlayscrollbars
 .os-scrollbar,
@@ -169,4 +165,13 @@ a:focus-visible {
     --os-handle-bg: var(--primary);
     --os-track-border-radius: r(10);
     --os-handle-border-radius: r(10);
+}
+
+// Fancybox
+.fancybox__container {
+    --fancybox-bg: rgba(80, 80, 80, .9) !important;
+}
+
+.f-button.is-close-btn {
+    display: none;
 }

@@ -146,6 +146,44 @@
     </section>
     <!-- End -->
 
+    <!-- Fancybox Modal -->
+    <div class="btn btn--primary order-modal">Вызывать модальное окно Fancybox</div>
+    <div id="order-modal" style="display: none;">
+        <div class="order-modal__content">
+            <button class="order-modal__close" aria-label="Закрыть модальное окно" data-fancybox-close="">
+                <svg>
+                    <use href="/src/assets/img/svg/sprite.svg#close"></use>
+                </svg>
+            </button>
+
+            <div class="order-modal__body">
+                <h2 class="order-modal__title"></h2>
+
+                <form class="order-modal__form">
+                    <div class="order-modal__field">
+                        <input class="order-modal__input" type="text" id="order-name" name="name" placeholder=" " required="">
+                        <label class="order-modal__label" for="order-name">Имя <span>*</span></label>
+                    </div>
+
+                    <div class="order-modal__field">
+                        <input class="order-modal__input" type="tel" id="order-phone" name="phone" placeholder=" ">
+                        <label class="order-modal__label" for="order-phone">Телефон (по желанию)</label>
+                    </div>
+
+                    <div class="order-modal__field">
+                        <input class="order-modal__input" type="email" id="order-email" name="email" required="" placeholder=" ">
+                        <label class="order-modal__label" for="order-email">Email <span>*</span></label>
+                    </div>
+
+                    <button class="order-modal__submit btn btn--accent" type="submit">Оставить заявку</button>
+
+                    <div class="order-modal__agreement">Нажимая кнопку “Оставить заявку”, вы соглашаетесь с <a href="#">Политикой конфиденциальности сайта.</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+
 </div>
 
 {% endblock %}

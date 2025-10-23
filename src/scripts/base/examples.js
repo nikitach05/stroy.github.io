@@ -64,4 +64,23 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Lenis (smooth scrolling)
 	initSmoothScrolling();
 
+
+	// Сделать активной ссылку навигации по блокам в зависимости от того какой блок больше виден на странице
+	// const contentBlocks = document.querySelectorAll(".blocks");
+	// const navLinks = document.querySelectorAll(".links");
+
+	// contentBlocks.forEach((block, index) => {
+	// 	ScrollTrigger.create({
+	// 		trigger: block,
+	// 		start: "top center",
+	// 		end: "bottom center",
+	// 		onToggle: (self) => {
+	// 			if (self.isActive) {
+	// 				navLinks.forEach((link) => link.classList.remove("active"));
+	// 				navLinks[index].classList.add("active");
+	// 			}
+	// 		},
+	// 	});
+	// });
+
 });
