@@ -43,4 +43,59 @@
     &:active {
         transform: scale(.925);
     }
+
+    // Button loader styles
+    &.loading {
+        pointer-events: none;
+        opacity: 0.7;
+    }
+
+    .btn-text {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-loader {
+        display: none;
+        align-items: center;
+        margin-left: r(8);
+
+        &.show {
+            display: inline-flex;
+        }
+    }
+
+    .spinner {
+        animation: spin 1s linear infinite;
+    }
+
+    .spinner-circle {
+        stroke-dasharray: 50;
+        stroke-dashoffset: 25;
+        animation: dash 1.5s ease-in-out infinite;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 50;
+    }
+
+    50% {
+        stroke-dashoffset: 12.5;
+    }
+
+    100% {
+        stroke-dashoffset: 50;
+    }
 }

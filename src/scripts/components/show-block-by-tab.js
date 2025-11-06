@@ -9,6 +9,7 @@ export default class ShowBlockByTab {
 	}
 
 	init() {
+		if (!this.container) return;
 		// Навешиваем обработчик на контейнер
 		this.container.addEventListener("click", this.clickHandler.bind(this));
 	}
