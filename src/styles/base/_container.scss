@@ -1,37 +1,14 @@
 .container {
     width: 100%;
-    padding-right: $container-gap;
     padding-left: $container-gap;
+    padding-right: $container-gap;
     margin-right: auto;
     margin-left: auto;
     box-sizing: border-box;
-}
 
-// xs
-@media (min-width: $xs) {
-    .container {
-        max-width: $xs;
-    }
-}
-
-// sm
-@media (min-width: $sm) {
-    .container {
-        max-width: calc($sm - calc($container-gap * 2));
-    }
-}
-
-// md
-@media (min-width: $md) {
-    .container {
-        max-width: calc($md - calc($container-gap * 2));
-    }
-}
-
-// lg
-@media (min-width: $lg) {
-    .container {
-        max-width: calc($lg - calc($container-gap * 2));
+    @include media('<lg') {
+        padding-left: r(15);
+        padding-right: r(15);
     }
 }
 

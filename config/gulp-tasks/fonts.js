@@ -78,7 +78,7 @@ const fontsStyle = () => {
 
   // Проверяем существуют ли файлы шрифтов
   const fontsFiles = getAllFiles(app.path.build.fonts);
-  const woff2Only = fontsFiles.filter((i) => i.match(/\.woff2/gi));
+  const woff2Only = fontsFiles.filter((i) => i.match(/\.woff/gi));
 
   if (!woff2Only.length) return;
 

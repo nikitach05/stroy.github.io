@@ -29,7 +29,7 @@
     box-shadow: none;
 
     &::placeholder {
-        color: var(--gray);
+        color: var(--gray-text);
     }
 
     &.error:not(&:focus) {
@@ -45,4 +45,74 @@
 .textarea {
     min-height: 16rem;
     resize: none;
+}
+
+.head-page {
+    margin: r(20) 0 r(20);
+
+    @include media('<md') {
+        margin-bottom: r(32);
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: r(32) r(20);
+
+        @include media('<md') {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+
+    @include media('<md') {
+        order: 1;
+        width: 100%;
+    }
+
+    &__input {
+        width: r(162);
+        height: slamp(r(39), r(48));
+        border-radius: r(4) 0 0 r(4);
+        border: 1px solid transparent;
+        font-size: r(16);
+        padding-left: r(16);
+        transition: border .3s;
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        @include media('<md') {
+            width: 100%;
+        }
+    }
+
+    &__submit {
+        width: slamp(r(39), r(48));
+        height: slamp(r(39), r(48));
+        flex-shrink: 0;
+        cursor: pointer;
+        border-radius: 0 r(4) r(4) 0;
+        border: 0;
+        outline: none;
+        box-shadow: none;
+        background: var(--primary);
+        transition: .3s;
+
+        &:hover {
+            background: var(--hover);
+        }
+
+        svg {
+            @include sprite-size(r(18), r(18));
+        }
+    }
 }

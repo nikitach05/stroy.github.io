@@ -16,7 +16,7 @@ body {
     font-family: var(--regular), sans-serif;
     line-height: 140%;
     color: var(--text);
-    // text-wrap: balance;
+    background: var(--bg);
 
     &.hidden {
         overflow: hidden;

@@ -1,7 +1,34 @@
-{% set title = "Home page" %}
+{% set title = "Главная" %}
 {% extends "layouts/main.njk" %}
 
 {% block content %}
 
+<section class="head-page">
+    <div class="head-page__container container">
+        <div class="breadcrumbs">
+            <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__list-item">
+                    <a href="/" class="breadcrumbs__list-link">Главная</a>
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <a href="/" class="breadcrumbs__list-link">Каталог</a>
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <a href="/" class="breadcrumbs__list-link">Гидроизоляционные материалы</a>
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <span class="breadcrumbs__list-link">Полимерные системы ГИПЕРДЕСМО®</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="search-box">
+            <input type="text" class="search-box__input" placeholder="Поиск" name="q">
+            <button type="submit" class="search-box__submit">
+                <svg><use href="/src/assets/img/svg-sprite/sprite.svg#search"></use></svg>
+            </button>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

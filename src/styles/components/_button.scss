@@ -3,14 +3,15 @@
     align-items: center;
     justify-content: center;
     gap: slamp(r(5), r(10));
-    width: max-content;
-    padding: slamp(r(15), r(20)) slamp(r(30), r(35));
+    padding: r(14) slamp(r(16), r(24));
     cursor: pointer;
-    @include font(r(14), r(16), 500);
-    line-height: 100%;
     text-align: center;
     text-decoration: none;
-    border-radius: r(20);
+    font-weight: 600;
+    font-size: r(16);
+    line-height: 120%;
+    text-transform: uppercase;
+    border-radius: r(4);
     transition: .25s;
     will-change: transform;
     user-select: none;
@@ -20,17 +21,7 @@
         background: var(--primary);
 
         &:hover {
-            background: var(--accent);
-        }
-    }
-
-    &--trans {
-        border: .12rem solid var(--primary);
-
-        &:hover {
-            color: var(--white);
-            border-color: var(--accent);
-            background: var(--accent);
+            background: var(--hover);
         }
     }
 

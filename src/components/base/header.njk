@@ -1,33 +1,89 @@
 <header class="header">
 	<div class="container">
+
+		<div class="header__top">
+			<div class="header__top-categories header-categories">
+				<a class="header-categories__item" href="#">Для дилеров</a>
+				<a class="header-categories__item" href="#">Для строительных компаний</a>
+			</div>
+
+			<ul class="header__top-menu top-menu">
+				<li class="top-menu__item">
+					<a href="#" class="top-menu__link">О компании</a>
+				</li>
+				<li class="top-menu__item">
+					<a href="#" class="top-menu__link">Контакты</a>
+				</li>
+			</ul>
+
+			<div class="header__top-right">
+				<ul class="header__top-socials socials">
+					<li class="socials__item">
+						<a class="socials__link" href="#">
+							<svg>
+								<use href="/src/assets/img/svg-sprite/sprite.svg#whatsapp"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="socials__item">
+						<a class="socials__link" href="#">
+							<svg>
+								<use href="/src/assets/img/svg-sprite/sprite.svg#telegram"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+				
+				<img src="/src/assets/img/svg/logo.svg" class="header__top-logo logo" alt="Logo">
+			</div>
+
+			<div class="header__top-contacts header-contacts">
+				<a class="header-contacts__item" href="#">
+					<svg>
+						<use href="/src/assets/img/svg-sprite/sprite.svg#email"></use>
+					</svg>
+					<span>shop@stroy-magazin.ru</span>
+				</a>
+				<a class="header-contacts__item" href="#">
+					<svg>
+						<use href="/src/assets/img/svg-sprite/sprite.svg#phone"></use>
+					</svg>
+					<span>+7 (495) 225-16-27</span>
+				</a>
+			</div>
+		</div>
+		
 		<div class="header__content">
-			<a href="/" class="header__logo logo">
-				<!-- <img src="img/svg/logo.svg" alt="Logo"> -->
+			<a href="/" class="header__logo">
+				<img class="logo" src="/src/assets/img/svg/main-logo.svg" alt="Logo">
 			</a>
 
-			<ul class="header__menu menu">
-				{% for li in menu %}
-				{% if li.submenu.length > 0 %}
-				<li class="menu__item menu__item--has-submenu">
-					<span class="menu__link">{{li.item}}</span>
-					<svg class="menu__arrow">
-						<use href="/src/assets/img/svg-sprite/sprite.svg#arrow"></use>
-					</svg>
-					<ul class="menu__submenu">
-						{% for subli in li.submenu %}
-						<li class="menu__submenu-item">
-							<a class="menu__submenu-link" href="#">{{subli}}</a>
-						</li>
-						{% endfor %}
-					</ul>
-				</li>
-				{% else %}
-				<li class="menu__item">
-					<a class="menu__link" href="#">{{li.item}}</a>
-				</li>
-				{% endif %}
-				{% endfor %}
-			</ul>
+			<div class="header__contacts header-contacts">
+				<a class="header-contacts__item" href="#">
+					<svg><use href="/src/assets/img/svg-sprite/sprite.svg#email"></use></svg>
+					<span>shop@stroy-magazin.ru</span>
+				</a>
+				<a class="header-contacts__item" href="#">
+					<svg><use href="/src/assets/img/svg-sprite/sprite.svg#phone"></use></svg>
+					<span>+7 (495) 225-16-27</span>
+				</a>
+			</div>
+
+			<div class="header__content-right">
+				<div class="header__actions">
+					<a class="header__user" href="#">
+						<svg><use href="/src/assets/img/svg-sprite/sprite.svg#person"></use></svg>
+					</a>
+					<a class="header__cart" href="#">
+						<svg><use href="/src/assets/img/svg-sprite/sprite.svg#cart"></use></svg>
+					</a>
+					<a class="header__wishlist" href="#">
+						<svg><use href="/src/assets/img/svg-sprite/sprite.svg#heart"></use></svg>
+					</a>
+				</div>
+				
+				<div class="header__button btn btn--primary">Обратный звонок</div>
+			</div>
 
 			<div class="header__menu-toggle menu-toggle">
 				<svg>
@@ -36,6 +92,22 @@
 			</div>
 
 		</div>
+
+		<div class="header__menu-wrapper">
+			<ul class="header__menu menu">
+				{% for li in menu %}
+				<li class="menu__item">
+					<a class="menu__link" href="#">{{li.item}}</a>
+				</li>
+				{% endfor %}
+			</ul>
+
+			<div class="header__menu-categories header-categories">
+				<a class="header-categories__item" href="#">Для дилеров</a>
+				<a class="header-categories__item" href="#">Для строительных компаний</a>
+			</div>
+		</div>
+		
 	</div>
 	
 	<div class="header__mobile-menu mobile-menu">
@@ -53,6 +125,27 @@
 			</li>
 			{% endfor %}
 		</ul>
+
+		<div class="mobile-menu__bottom">
+			<ul class="mobile-menu__socials socials">
+				<li class="socials__item">
+					<a class="socials__link" href="#">
+						<svg>
+							<use href="/src/assets/img/svg-sprite/sprite.svg#whatsapp"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="socials__item">
+					<a class="socials__link" href="#">
+						<svg>
+							<use href="/src/assets/img/svg-sprite/sprite.svg#telegram"></use>
+						</svg>
+					</a>
+				</li>
+			</ul>
+			
+			<div class="mobile-menu__button btn btn--primary">обратный звонок</div>
+		</div>
 	
 	</div>
 	
