@@ -1,63 +1,66 @@
-.slider {
+.main {
     position: relative;
+    min-height: slamp(r(460), r(555));
+    padding: slamp(r(32), r(56)) 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--white);
 
-    &__items {
-        overflow: visible;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: var(--primary);
+        filter: brightness(0.92);
+        opacity: .5;
+        z-index: 1;
     }
 
-    &__item {
-        position: relative;
-        padding: r(20);
-        box-shadow: 0px 12px 56px 0px rgba(6, 28, 61, 0.12);
-        transition: .25s;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .swiper-slide-active,
-    .swiper-slide-prev,
-    .swiper-slide-next {
+    &::after {
+        backdrop-filter: blur(4px);
+        background: rgba(255, 255, 255, 0.01);
         opacity: 1;
-        pointer-events: all;
+        z-index: 5;
     }
 
-    @include swiper-arrows(r(60), 0, calc(50% - 2rem));
-
-    .swiper-pagination {
-        margin: r(15) 0 0;
+    .container {
+        position: relative;
+        z-index: 10;
     }
 
-    @include media('<lg') {
-        .swiper-slide-prev {
-            opacity: 0;
-            pointer-events: none;
+    &__description {
+        margin: r(16) 0 0;
+        font-size: slamp(r(14), r(24));
+        line-height: 120%;
+    }
+    
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: r(24);
+        margin: r(100) 0 0;
+
+        &-icon {
+            max-width: r(115);
+            max-height: r(96);
+            height: auto;
+            object-fit: contain;
+        }
+
+        &-text {
+            display: block;
+            margin: slamp(r(10), r(32)) 0 0;
+            font-size: slamp(r(14), r(24));
+            line-height: 120%;
+            font-weight: 600;
+
+            @include media('<xs') {
+                font-weight: 400;
+            }
         }
     }
-
-    @include media('<sm') {
-
-        .swiper-arrows-prev,
-        .swiper-arrows-next {
-            display: none;
-        }
-
-        .swiper-slide-next {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .swiper-pagination {
-            display: inline-block;
-        }
-    }
-}
-
-.image {
-    max-width: r(100);
-    width: 100%;
-    height: auto;
-}
-
-a {
-    display: inline-block;
 }
