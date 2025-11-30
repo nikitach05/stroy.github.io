@@ -118,3 +118,20 @@
         }
     }
 }
+
+.slide-down {
+    &.opened {
+        .slide-down {
+            &__arrow {
+                svg {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+    &__content {
+        display: none;
+        will-change: height;
+    }
+}
