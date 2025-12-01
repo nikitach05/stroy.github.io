@@ -6,6 +6,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import '../components/sliders';
 import { MaskPhone } from '../components/input-masks';
 import { slideUp, slideDown, slideToggle } from "../components/slide-toggle";
+import "../components/checkbox";
 
 document.addEventListener('DOMContentLoaded', () => {
 	new MaskPhone('input[type="tel"]');

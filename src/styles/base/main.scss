@@ -23,15 +23,20 @@
     width: 100%;
     padding: 1.4rem 1.2rem;
     outline: none;
-    border: 1px solid var(--gray400);
-    border-radius: 0;
-    @include font();
+    border: 1px solid transparent;
+    border-radius: r(4);
+    font-size: slamp(r(14), r(16));
     color: var(--text);
-    background: var(--white);
+    background: var(--bg);
     box-shadow: none;
+    transition: border .3s;
 
     &::placeholder {
         color: var(--gray-text);
+    }
+
+    &:focus {
+        border-color: var(--border);
     }
 
     &.error:not(&:focus) {
@@ -47,6 +52,21 @@
 .textarea {
     min-height: 16rem;
     resize: none;
+}
+
+.field {
+    margin: 0 0 r(16);
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &--flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: r(24);
+    }
 }
 
 .head-page {

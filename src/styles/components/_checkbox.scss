@@ -19,11 +19,12 @@
         flex-shrink: 0;
         width: r(22);
         height: r(22);
-        border: 1px solid var(--text);
+        border: 1px solid var(--border);
         background-color: transparent;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 70%;
+        border-radius: r(2);
         cursor: pointer;
 
         &.active {
@@ -38,11 +39,11 @@
     }
 
     &__label {
-        max-width: r(700);
-        margin: 0 0 0 r(14);
-        @include font(r(14));
+        max-width: r(426);
+        margin: 0 0 0 r(8);
+        font-size: r(12);
         line-height: 120%;
-        color: var(--text);
+        color: var(--gray-text);
         cursor: pointer;
     }
 
