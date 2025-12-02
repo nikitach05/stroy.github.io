@@ -1,0 +1,363 @@
+{% set title = "Готовые решения второй уровень" %}
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+
+<section class="head-page">
+    <div class="head-page__container container">
+        <div class="breadcrumbs">
+            <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__list-item">
+                    <a href="/" class="breadcrumbs__list-link">Главная</a>
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <a href="/" class="breadcrumbs__list-link">Каталог</a>
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <a href="/" class="breadcrumbs__list-link">Гидроизоляционные материалы</a>
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <span class="breadcrumbs__list-link">Полимерные системы ГИПЕРДЕСМО®</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="search-box">
+            <input type="text" class="search-box__input" placeholder="Поиск" name="q">
+            <button type="submit" class="search-box__submit">
+                <svg><use href="/src/assets/img/svg-sprite/sprite.svg#search"></use></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="main" style="background-image: url('/src/assets/img/image1.webp');">
+    <div class="container">
+        <div class="main__title title">
+            <h1>Готовые решения</h1>
+        </div>
+
+        <div class="main__description">Предлагаем вашему вниманию готовые решения для:</div>
+        
+        <div class="main__list">
+            <div class="main__list-item">
+                <img class="main__list-icon" src="/src/assets/img/svg/icon1.svg" loading="lazy" alt="Icon">
+                <span class="main__list-text">Строительных организаций и&nbsp;частных лиц</span>
+            </div>
+            <div class="main__list-item">
+                <img class="main__list-icon" src="/src/assets/img/svg/icon2.svg" loading="lazy" alt="Icon">
+                <span class="main__list-text">Проектировщиков</span>
+            </div>
+            <div class="main__list-item">
+                <img class="main__list-icon" src="/src/assets/img/svg/icon3.svg" loading="lazy" alt="Icon">
+                <span class="main__list-text">Эксплуатирующих организаций</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="directions-section p-indent">
+    <div class="container">
+        <div class="directions-section__title title">
+            <h2>Выбрать направление работ</h2>
+        </div>
+
+        <ul class="directions-section__categories tabs">
+            <li class="tabs__item active" data-tab="1">
+                <span class="tabs__item-link">Кровля</span>
+            </li>
+            <li class="tabs__item" data-tab="2">
+                <span class="tabs__item-link">Сооружения</span>
+            </li>
+            <li class="tabs__item" data-tab="3">
+                <span class="tabs__item-link">Ванная комната</span>
+            </li>
+            <li class="tabs__item" data-tab="4">
+                <span class="tabs__item-link">Бассейны</span>
+            </li>
+        </ul>
+
+        <div class="directions-section__items active" data-block="1">
+            <a href="#" class="direction-card">
+                <div class="direction-card__img-box">
+                    <img class="direction-card__img" src="/src/assets/img/image7.webp" loading="lazy" alt="Image">
+                </div>
+                <div class="direction-card__content">
+                    <div class="direction-card__title">Система для гидроизоляции резервуаров</div>
+                    <div class="direction-card__text">Применяется для гидроизоляции резервуаров, изготовленных из бетона, стали и других материалов, сборных железобетонных резервуаров, резервуаров с большим коэффициентом температурных деформаций.</div>
+                    <div class="direction-card__subtext">ГИПЕРДЕСМО® Резервуар</div>
+                </div>
+            </a>
+            <a href="#" class="direction-card">
+                <div class="direction-card__img-box">
+                    <img class="direction-card__img" src="/src/assets/img/image8.webp" loading="lazy" alt="Image">
+                </div>
+                <div class="direction-card__content">
+                    <div class="direction-card__title">Система для гидроизоляции трибун стадионов</div>
+                    <div class="direction-card__text">Современная, стойкая к истиранию и ультрафиолетовому излучению система устройства бесшовной гидроизоляции трибун
+                    стадионов, эксплуатируемых кровель и пр.</div>
+                    <div class="direction-card__subtext">ГИПЕРДЕСМО® Трибуны</div>
+                </div>
+            </a>
+            <a href="#" class="direction-card">
+                <div class="direction-card__img-box">
+                    <img class="direction-card__img" src="/src/assets/img/image9.webp" loading="lazy" alt="Image">
+                </div>
+                <div class="direction-card__content">
+                    <div class="direction-card__title">Гидроизоляция фундаментов с армированием</div>
+                    <div class="direction-card__text">Для надежной долговременной гидроизоляции плит и стен фундаментов, а также иных подземных сооружений в любых климатическ</div>
+                    <div class="direction-card__subtext">РАББЕРФЛЕКС® ЗАЩИТА ДЕФОРМАЦИОННЫХ ШВОВ НА МОСТАХ</div>
+                </div>
+            </a>
+            <a href="#" class="direction-card">
+                <div class="direction-card__img-box">
+                    <img class="direction-card__img" src="/src/assets/img/image10.webp" loading="lazy" alt="Image">
+                </div>
+                <div class="direction-card__content">
+                    <div class="direction-card__title">Гидроизоляция мостов</div>
+                    <div class="direction-card__text">В данной системе использованы исключительно экологически безопасные материалы, что позволяет применять ее для
+                    гидроизоляции ванных комнат, кухонь и душевых в жилых помещениях.</div>
+                    <div class="direction-card__subtext">РАББЕРФЛЕКС® МОСТОВОЕ ПОЛОТНО</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="directions-section__items" data-block="2">
+            <a href="#" class="direction-card">
+                <div class="direction-card__img-box">
+                    <img class="direction-card__img" src="/src/assets/img/image8.webp" loading="lazy" alt="Image">
+                </div>
+                <div class="direction-card__content">
+                    <div class="direction-card__title">Система для гидроизоляции трибун стадионов</div>
+                    <div class="direction-card__text">Современная, стойкая к истиранию и ультрафиолетовому излучению система устройства бесшовной гидроизоляции трибун
+                    стадионов, эксплуатируемых кровель и пр.</div>
+                    <div class="direction-card__subtext">ГИПЕРДЕСМО® Трибуны</div>
+                </div>
+            </a>
+            <a href="#" class="direction-card">
+                <div class="direction-card__img-box">
+                    <img class="direction-card__img" src="/src/assets/img/image10.webp" loading="lazy" alt="Image">
+                </div>
+                <div class="direction-card__content">
+                    <div class="direction-card__title">Гидроизоляция мостов</div>
+                    <div class="direction-card__text">В данной системе использованы исключительно экологически безопасные материалы, что позволяет применять ее для
+                    гидроизоляции ванных комнат, кухонь и душевых в жилых помещениях.</div>
+                    <div class="direction-card__subtext">РАББЕРФЛЕКС® МОСТОВОЕ ПОЛОТНО</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="directions-section__items" data-block="3">
+            <a href="#" class="direction-card">
+                <div class="direction-card__img-box">
+                    <img class="direction-card__img" src="/src/assets/img/image10.webp" loading="lazy" alt="Image">
+                </div>
+                <div class="direction-card__content">
+                    <div class="direction-card__title">Гидроизоляция мостов</div>
+                    <div class="direction-card__text">В данной системе использованы исключительно экологически безопасные материалы, что позволяет применять ее для
+                    гидроизоляции ванных комнат, кухонь и душевых в жилых помещениях.</div>
+                    <div class="direction-card__subtext">РАББЕРФЛЕКС® МОСТОВОЕ ПОЛОТНО</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="directions-section__items" data-block="4">
+            <a href="#" class="direction-card">
+                <div class="direction-card__img-box">
+                    <img class="direction-card__img" src="/src/assets/img/image7.webp" loading="lazy" alt="Image">
+                </div>
+                <div class="direction-card__content">
+                    <div class="direction-card__title">Система для гидроизоляции резервуаров</div>
+                    <div class="direction-card__text">Применяется для гидроизоляции резервуаров, изготовленных из бетона, стали и других материалов, сборных железобетонных резервуаров, резервуаров с большим коэффициентом температурных деформаций.</div>
+                    <div class="direction-card__subtext">ГИПЕРДЕСМО® Резервуар</div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="steps p-indent">
+    <div class="container">
+        <div class="steps__title title">
+            <h2>6 шагов к решению вашей задачи</h2>
+        </div>
+
+        <div class="steps__inner">
+            <div class="steps__column">
+                <div class="steps__item slide-down opened">
+                    <div class="steps__item-num">Шаг 1</div>
+                    <div class="steps__item-head slide-down__head">
+                        <div class="steps__item-title">Первичная консультация</div>
+                        <div class="steps__item-arrow slide-down__arrow">
+                            <svg><use href="/src/assets/img/svg-sprite/sprite.svg#arrow-right"></use></svg>
+                        </div>
+                    </div>
+                    <div class="steps__item-content slide-down__content">
+                        <div class="steps__item-text">Возможно, мы не первые, кому вы позвонили, и каждый рассказывает Вам что-то своё. Вместе с Вами мы попытаемся
+                        разобраться и подобрать лучшее решение.</div>
+                    </div>
+                </div>
+                <div class="steps__item slide-down">
+                    <div class="steps__item-num">Шаг 2</div>
+                    <div class="steps__item-head slide-down__head">
+                        <div class="steps__item-title">Выездная диагностика и точный замер</div>
+                        <div class="steps__item-arrow slide-down__arrow">
+                            <svg><use href="/src/assets/img/svg-sprite/sprite.svg#arrow-right"></use></svg>
+                        </div>
+                    </div>
+                    <div class="steps__item-content slide-down__content">
+                        <div class="steps__item-text">Возможно, мы не первые, кому вы позвонили, и каждый рассказывает Вам что-то своё. Вместе с Вами мы попытаемся
+                        разобраться и подобрать лучшее решение.</div>
+                    </div>
+                </div>
+                <div class="steps__item slide-down">
+                    <div class="steps__item-num">Шаг 3</div>
+                    <div class="steps__item-head slide-down__head">
+                        <div class="steps__item-title">Техническое решение и понятная цена</div>
+                        <div class="steps__item-arrow slide-down__arrow">
+                            <svg><use href="/src/assets/img/svg-sprite/sprite.svg#arrow-right"></use></svg>
+                        </div>
+                    </div>
+                    <div class="steps__item-content slide-down__content">
+                        <div class="steps__item-text">Возможно, мы не первые, кому вы позвонили, и каждый рассказывает Вам что-то своё. Вместе с Вами мы попытаемся
+                        разобраться и подобрать лучшее решение.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="steps__column">
+                <div class="steps__item slide-down">
+                    <div class="steps__item-num">Шаг 4</div>
+                    <div class="steps__item-head slide-down__head">
+                        <div class="steps__item-title">Организация процесса поставки материалов</div>
+                        <div class="steps__item-arrow slide-down__arrow">
+                            <svg><use href="/src/assets/img/svg-sprite/sprite.svg#arrow-right"></use></svg>
+                        </div>
+                    </div>
+                    <div class="steps__item-content slide-down__content">
+                        <div class="steps__item-text">Возможно, мы не первые, кому вы позвонили, и каждый рассказывает Вам что-то своё. Вместе с Вами мы попытаемся
+                        разобраться и подобрать лучшее решение.</div>
+                    </div>
+                </div>
+                <div class="steps__item slide-down">
+                    <div class="steps__item-num">Шаг 5</div>
+                    <div class="steps__item-head slide-down__head">
+                        <div class="steps__item-title">Качественное выполнение работ</div>
+                        <div class="steps__item-arrow slide-down__arrow">
+                            <svg><use href="/src/assets/img/svg-sprite/sprite.svg#arrow-right"></use></svg>
+                        </div>
+                    </div>
+                    <div class="steps__item-content slide-down__content">
+                        <div class="steps__item-text">Возможно, мы не первые, кому вы позвонили, и каждый рассказывает Вам что-то своё. Вместе с Вами мы попытаемся
+                        разобраться и подобрать лучшее решение.</div>
+                    </div>
+                </div>
+                <div class="steps__item slide-down">
+                    <div class="steps__item-num">Шаг 6</div>
+                    <div class="steps__item-head slide-down__head">
+                        <div class="steps__item-title">Строительный контроль и приемка работ</div>
+                        <div class="steps__item-arrow slide-down__arrow">
+                            <svg><use href="/src/assets/img/svg-sprite/sprite.svg#arrow-right"></use></svg>
+                        </div>
+                    </div>
+                    <div class="steps__item-content slide-down__content">
+                        <div class="steps__item-text">Возможно, мы не первые, кому вы позвонили, и каждый рассказывает Вам что-то своё. Вместе с Вами мы попытаемся
+                        разобраться и подобрать лучшее решение.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="target-block p-indent">
+    <div class="container">
+        <div class="target-block__inner">
+            <div class="target-block__content" style="background-image: url('/src/assets/img/image5.webp');">
+                <div class="target-block__title">Приглашаем к&nbsp;сотрудничеству!</div>
+                <ul class="target-block__list">
+                    <li class="target-block__list-item">Диллеров</li>
+                    <li class="target-block__list-item">Магазины</li>
+                    <li class="target-block__list-item">Строительные организации</li>
+                </ul>
+                <button class="target-block__btn btn btn--primary">Стать парнёром</button>
+            </div>
+            <form class="target-block__form">
+                <div class="target-block__form-title">Позвоните нам или оставьте свой телефон</div>
+                <div class="target-block__form-subtitle">Мы свяжемся с Вами в ближайшее время и поможем решить Вашу задачу</div>
+
+                <div class="target-block__form-box">
+                    <div class="field">
+                        <input type="text" class="input" name="name" placeholder="Ваше имя">
+                    </div>
+                    <div class="field">
+                        <input type="tel" class="input" name="phone" placeholder="+7 (999) 999-99-99">
+                    </div>
+                    <div class="field field--flex">
+                        <button class="target-block__form-submit btn btn--primary">Отправить</button>
+
+                        <div class="form-agreement">
+                            <div class="checkbox-field">
+                                <input type="checkbox" name="policy" checked class="checkbox-field__input">
+                                <div class="checkbox-field__box active"></div>
+                                <div class="checkbox-field__label">Отправляя данную форму, вы даете свое согласие на обработку персональных данных и согласны с политикой
+                                конфиденциальности</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="main-advantages p-indent">
+    <div class="container">
+        <div class="main-advantages__title title">
+            <h2>Преимущества системного подхода</h2>
+        </div>
+
+        <div class="main-advantages__items">
+            <div class="main-advantages__column">
+                <div class="main-advantages__item">
+                    <div class="main-advantages__item-icon">
+                        <img src="/src/assets/img/svg/icon4.svg" loading="lazy" alt="Icon">
+                    </div>
+                    <div class="main-advantages__item-title">Работа с&nbsp;одним производителем</div>
+                    <div class="main-advantages__item-text">
+                        <p>Благодаря широкому ассортименту продукции, ТЕхнониколь реализует возможность стандартизации и&nbsp;унификации применяемых
+                        материалов при строительстве кровли.</p>
+                        <p>Приобретение всего необходимого комплекта у одного производителя снижает операционные издержки и&nbsp;позволяет получить
+                        скидку за комплексную поставку, повышая экономическую целесообразность проекта.</p>
+                    </div>
+                </div>
+                <div class="main-advantages__item">
+                    <div class="main-advantages__item-icon">
+                        <img src="/src/assets/img/svg/icon5.svg" loading="lazy" alt="Icon">
+                    </div>
+                    <div class="main-advantages__item-title">Набор готовых решений</div>
+                    <div class="main-advantages__item-text">
+                        <p>Использование системного подхода в кровельных решениях ТСС существенно снижает трудозатраты на&nbsp;разработку индивидуальных
+                        проектов, благодаря предоставлению готового набора совместимых материалов и оптимизированных технологий монтажа.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-advantages__column">
+                <div class="main-advantages__item">
+                    <div class="main-advantages__item-icon">
+                        <img src="/src/assets/img/svg/icon6.svg" loading="lazy" alt="Icon">
+                    </div>
+                    <div class="main-advantages__item-title">Вся документация</div>
+                    <div class="main-advantages__item-text">
+                        <p>Для удобства проектировщиков и строителей мы предлагаем всю необходимую техническую документацию в различных форматах:
+                        сертификаты и&nbsp;заключения, альбомы узлов в DWG и PDF, BIM-инструменты, руководства по проектированию, инструкции
+                        по монтажу и стандарты организации.</p>
+                    </div>
+                    <img class="main-advantages__item-img" src="/src/assets/img/image6.webp" loading="lazy" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

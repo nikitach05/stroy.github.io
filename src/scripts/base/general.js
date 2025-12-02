@@ -7,6 +7,7 @@ import '../components/sliders';
 import { MaskPhone } from '../components/input-masks';
 import { slideUp, slideDown, slideToggle } from "../components/slide-toggle";
 import "../components/checkbox";
+import ShowBlockByTab from "../components/show-block-by-tab";
 
 document.addEventListener('DOMContentLoaded', () => {
 	new MaskPhone('input[type="tel"]');
@@ -105,4 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	}
+
+	// Show/hide direction blocks
+	new ShowBlockByTab(".directions-section");
 });
