@@ -122,3 +122,47 @@
         }
     }
 }
+
+.materials {
+    &__title {
+        max-width: r(1090);
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: r(20);
+        margin: slamp(r(24), r(40)) 0 0;
+
+        @include media('<sm') {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include media('<xs') {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: slamp(r(16), r(24));
+        text-decoration: none;
+        color: var(--text);
+        
+        &-img {
+            max-width: 100%;
+            width: 100%;
+            height: slamp(r(200), r(236), $xxs, $xs);
+            object-fit: cover;
+            border-radius: r(8);
+        }
+
+        &-title {
+            max-width: r(390);
+            font-size: slamp(r(20), r(24));
+            font-weight: 600;
+            line-height: 120%;
+        }
+    }
+}

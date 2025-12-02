@@ -10,6 +10,12 @@
         line-height: 110%;
         hyphens: manual;
     }
+
+    &--small {
+        h2 {
+            font-size: slamp(r(28), r(40));
+        }
+    }
 }
 
 .txt {
