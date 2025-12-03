@@ -168,6 +168,16 @@
             align-items: center;
             justify-content: space-between;
             gap: r(12);
+
+            &:hover {
+                .steps {
+                    &__item {
+                        &-arrow {
+                            background: var(--hover);
+                        }
+                    }
+                }
+            }
         }
 
         &-arrow {
@@ -179,6 +189,7 @@
             height: r(40);
             border-radius: r(4);
             cursor: pointer;
+            transition: .3s;
             background: var(--primary);
 
             @include media('<xs') {

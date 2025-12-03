@@ -68,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Slide down steps
 	slideDownBlock(".steps");
 
+	// Slide down faq
+	slideDownBlock(".faq");
+
 	function slideDownBlock(container) {
 		const parent = document.querySelector(container);
 
