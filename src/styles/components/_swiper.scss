@@ -42,12 +42,18 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    width: slamp(3rem, 6rem);
-    height: slamp(3rem, 6rem);
+    width: r(56);
+    height: r(56);
     border-radius: 50%;
     background: var(--primary);
     transition: .25s;
     user-select: none;
+    z-index: 100;
+
+    @include media('<xs') {
+        width: r(32);
+        height: r(32);
+    }
 
     svg {
         width: 40%;
@@ -60,34 +66,16 @@
 
     &.swiper-button-disabled {
         pointer-events: none;
-        background: gray;
+        background: var(--gray-text);
     }
 
     &:not(&.swiper-button-disabled):hover {
-        background: var(--accent);
+        background: var(--hover);
     }
 }
 
-@mixin swiper-arrows($size, $translate: 0, $top: 50%) {
-
-    .swiper-arrows-prev,
-    .swiper-arrows-next {
-        position: absolute;
-        top: calc($top - slamp(calc($size / 4), calc($size / 2)));
-        width: slamp(calc($size / 2), $size);
-        height: slamp(calc($size / 2), $size);
-        z-index: 100;
-    }
-
-    .swiper-arrows-prev {
-        left: calc(slamp(calc($size / 4), calc($size / 2)) * -1);
-        transform: translateX(calc($translate) * -1) rotate(90deg);
-    }
-
-    .swiper-arrows-next {
-        right: calc(slamp(calc($size / 4), calc($size / 2)) * -1);
-        transform: translateX($translate) rotate(-90deg);
-    }
+.swiper-arrows-prev {
+    transform: rotate(-180deg);
 }
 
 .swiper-horizontal>.swiper-pagination-bullets,

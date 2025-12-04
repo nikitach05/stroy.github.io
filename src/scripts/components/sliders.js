@@ -1,32 +1,28 @@
 // Modules
 import Swiper from "swiper";
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
-const slider = new Swiper('.slider__items', {
-    modules: [ Navigation, Pagination ],
-    slidesPerView: 3,
-    spaceBetween: 20,
-    centeredSlides: true,
-    loop: true,
-    navigation: {
-        nextEl: '.slider .swiper-arrows-next',
-        prevEl: '.slider .swiper-arrows-prev'
-    },
-    pagination: {
-        el: '.slider .swiper-pagination',
-        clickable: false
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1,
-        },
-        768: {
-            slidesPerView: 2,
-            centeredSlides: false
-        },
-        1320: {
-            slidesPerView: 3,
-            centeredSlides: true,
-        }
-    }
+new Swiper(".directions-slider__items", {
+	modules: [Navigation],
+	slidesPerView: 3,
+	spaceBetween: 20,
+	loop: false,
+	navigation: {
+		nextEl: ".directions-slider .swiper-arrows-next",
+		prevEl: ".directions-slider .swiper-arrows-prev",
+	},
+	breakpoints: {
+		0: {
+			slidesPerView: 1.5,
+			spaceBetween: 10,
+		},
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+		},
+		1320: {
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+	},
 });
