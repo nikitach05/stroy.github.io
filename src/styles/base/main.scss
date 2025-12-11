@@ -79,6 +79,7 @@
     margin: r(20) 0 r(20);
 
     @include media('<md') {
+        margin-top: r(16);
         margin-bottom: r(32);
     }
 

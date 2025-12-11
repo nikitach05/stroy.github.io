@@ -96,16 +96,29 @@
 		<div class="header__menu-wrapper">
 			<ul class="header__menu menu">
 				{% for li in menu %}
+				{% if li.submenu.length > 0 %}
+				<li class="menu__item menu__item--has-submenu">
+					<span class="menu__link">
+						{{li.item}}
+						<svg class="menu__arrow">
+							<use href="/src/assets/img/svg-sprite/sprite.svg#arrow"></use>
+						</svg>
+					</span>
+					<ul class="menu__submenu">
+						{% for subli in li.submenu %}
+						<li class="menu__submenu-item">
+							<a class="menu__submenu-link" href="#">{{subli}}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+				{% else %}
 				<li class="menu__item">
 					<a class="menu__link" href="#">{{li.item}}</a>
 				</li>
+				{% endif %}
 				{% endfor %}
 			</ul>
-
-			<div class="header__menu-categories header-categories">
-				<a class="header-categories__item" href="#">Для дилеров</a>
-				<a class="header-categories__item" href="#">Для строительных компаний</a>
-			</div>
 		</div>
 		
 	</div>
@@ -120,14 +133,40 @@
 	
 		<ul class="mobile-menu__list">
 			{% for li in menu %}
+			{% if li.submenu.length > 0 %}
+			<li class="mobile-menu__list-item mobile-menu__list-item--has-submenu">
+				<div class="mobile-menu__list-head">
+					<a class="mobile-menu__list-link" href="#">{{li.item}}</a>
+					<div class="mobile-menu__list-arrow">
+						<svg>
+							<use href="/src/assets/img/svg-sprite/sprite.svg#arrow"></use>
+						</svg>
+					</div>
+				</div>
+				<ul class="mobile-menu__list-submenu">
+					{% for subli in li.submenu %}
+					<li class="mobile-menu__list-submenu-item">
+						<a class="mobile-menu__list-submenu-link" href="#">{{subli}}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</li>
+			{% else %}
 			<li class="mobile-menu__list-item">
 				<a class="mobile-menu__list-link" href="#">{{li.item}}</a>
 			</li>
+			{% endif %}
 			{% endfor %}
 		</ul>
 
+		<div class="header-categories">
+			<a class="header-categories__item" href="#">Для дилеров</a>
+			<a class="header-categories__item" href="#">Для строительных компаний</a>
+		</div>
+
 		<div class="mobile-menu__bottom">
-			<ul class="mobile-menu__socials socials">
+			<div class="mobile-menu__bottom-label">Связаться с нами:</div>
+			<ul class="mobile-menu__socials socials socials--large">
 				<li class="socials__item">
 					<a class="socials__link" href="#">
 						<svg>

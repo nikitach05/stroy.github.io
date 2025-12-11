@@ -1,3 +1,5 @@
+import { slideUp, slideDown, slideToggle } from "../components/slide-toggle";
+
 document.addEventListener("DOMContentLoaded", () => {
 	// Mobile menu btn toggle
 	const btnMenu = document.querySelector(".menu-toggle");
@@ -47,4 +49,24 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	setMenuHeight();
+
+	const submenus = document.querySelectorAll(".mobile-menu__list-arrow");
+	submenus.forEach((slide) => {
+		slide.addEventListener("click", () => {
+			const parent = slide.closest(".mobile-menu__list-item");
+			const content = parent.querySelector(".mobile-menu__list-submenu");
+
+			const isOpened = parent.classList.contains("opened");
+
+			if (isOpened) {
+				// Закрываем элемент
+				parent.classList.remove("opened");
+				slideUp(content, 500, 'flex');
+			} else {
+				// Открываем элемент
+				parent.classList.add("opened");
+				slideDown(content, 500, 'flex');
+			}
+		});
+	});
 });
