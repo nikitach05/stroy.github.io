@@ -8,8 +8,24 @@
 			</div>
 
 			<ul class="header__top-menu top-menu">
-				<li class="top-menu__item">
-					<a href="#" class="top-menu__link">О компании</a>
+				<li class="top-menu__item top-menu__item--has-submenu">
+					<span class="top-menu__link">
+						О компании
+						<svg class="top-menu__arrow">
+							<use href="/src/assets/img/svg-sprite/sprite.svg#arrow"></use>
+						</svg>
+					</span>
+					<ul class="top-menu__submenu">
+						<li class="top-menu__submenu-item">
+							<a class="top-menu__submenu-link" href="#">Новости</a>
+						</li>
+						<li class="top-menu__submenu-item">
+							<a class="top-menu__submenu-link" href="#">Сотрудничество</a>
+						</li>
+						<li class="top-menu__submenu-item">
+							<a class="top-menu__submenu-link" href="#">FAQ</a>
+						</li>
+					</ul>
 				</li>
 				<li class="top-menu__item">
 					<a href="#" class="top-menu__link">Контакты</a>
@@ -132,7 +148,7 @@
 		</div>
 	
 		<ul class="mobile-menu__list">
-			{% for li in menu %}
+			{% for li in mobile_menu %}
 			{% if li.submenu.length > 0 %}
 			<li class="mobile-menu__list-item mobile-menu__list-item--has-submenu">
 				<div class="mobile-menu__list-head">
