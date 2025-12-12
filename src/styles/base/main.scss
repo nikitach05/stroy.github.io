@@ -162,3 +162,52 @@
         will-change: height;
     }
 }
+
+.tabs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: slamp(r(10), r(20));
+
+    &__item {
+        font-size: slamp(r(16), r(24));
+        font-weight: 600;
+        line-height: 120%;
+        border: 1px solid var(--gray-text);
+        border-radius: r(4);
+        cursor: pointer;
+        color: var(--text);
+        background: transparent;
+        transition: .3s;
+
+        &:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        &-link {
+            display: block;
+            padding: slamp(r(12), r(16)) slamp(r(32), r(48));
+            color: currentColor;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        &.active {
+            border-color: var(--primary);
+            background: var(--primary);
+        }
+
+        &.active &-link {
+            color: var(--white);
+        }
+    }
+
+    &--small &__item {
+        font-size: r(16);
+
+        &-link {
+            padding: r(12);
+        }
+    }
+}

@@ -112,4 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Show/hide direction blocks
 	new ShowBlockByTab(".directions-section");
+
+	// Show/hide system-composition blocks
+	new ShowBlockByTab(".system-composition");
 });
