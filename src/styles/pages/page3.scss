@@ -149,6 +149,19 @@
         @include media('<lg') {
             margin: slamp(r(24), r(40)) 0 0
         }
+
+        @include media('<xs') {
+            display: none;
+        }
+    }
+
+    &__select {
+        display: none;
+
+        @include media('<xs') {
+            display: block;
+            margin: r(24) 0 0;
+        }
     }
 
     &__block {
@@ -238,6 +251,14 @@
         font-size: slamp(r(14), r(16));
         text-align: justify;
         opacity: .6;
+
+        &:not(.opened) {
+            @include dots-line(4);
+        }
+    }
+
+    &__show-more {
+        width: max-content;
     }
 
     &__subtitle {

@@ -59,22 +59,22 @@
         <div class="main__where-used where-used">
             <div class="where-used__label">Где применяется продукт:</div>
             <div class="where-used__items">
-                <a href="#tank-solutions" class="where-used__item">
+                <a href="#tank-solutions" class="where-used__item" data-tab="1">
                     <img class="where-used__item-icon" src="/src/assets/img/icon1.webp" loading="lazy" alt="">
                     <div class="where-used__item-text">Резервуары для воды, из бетона, стали и др. материалов</div>
                     <div class="where-used__item-link">Подробнее</div>
                 </a>
-                <a href="#tank-solutions" class="where-used__item">
+                <a href="#tank-solutions" class="where-used__item" data-tab="2">
                     <img class="where-used__item-icon" src="/src/assets/img/icon2.webp" loading="lazy" alt="">
                     <div class="where-used__item-text">Сборные резервуары из бетона</div>
                     <div class="where-used__item-link">Подробнее</div>
                 </a>
-                <a href="#tank-solutions" class="where-used__item">
+                <a href="#tank-solutions" class="where-used__item" data-tab="3">
                     <img class="where-used__item-icon" src="/src/assets/img/icon3.webp" loading="lazy" alt="">
                     <div class="where-used__item-text">Резервуары для питьевой воды</div>
                     <div class="where-used__item-link">Подробнее</div>
                 </a>
-                <a href="#tank-solutions" class="where-used__item">
+                <a href="#tank-solutions" class="where-used__item" data-tab="4">
                     <img class="where-used__item-icon" src="/src/assets/img/icon4.webp" loading="lazy" alt="">
                     <div class="where-used__item-text">Резервуары с высоким уровнем возможной деформации</div>
                     <div class="where-used__item-link">Подробнее</div>
@@ -312,6 +312,17 @@
                     <span class="tabs__item-link">Резервуар с открытой гидроизоляцией</span>
                 </li>
             </ul>
+
+            <div class="system-composition__select itc-select composition-select">
+                <!-- Кнопка для открытия выпадающего списка -->
+                <button type="button" class="itc-select__toggle" name="composition" value="" data-select="toggle" data-index="-1">Резервуар с закрытой гидроизоляцией</button>
+                <div class="itc-select__dropdown">
+                    <ul class="itc-select__options">
+                        <li class="itc-select__option" data-select="option" data-tab="1" data-index="0">Резервуар с закрытой гидроизоляцией</li>
+                        <li class="itc-select__option" data-select="option" data-tab="2" data-index="1">Резервуар с открытой гидроизоляцией</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="system-composition__block active" data-block="1">
@@ -344,8 +355,10 @@
                     </div>
 
                     <div class="system-composition__content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra mecenas accumsan lacus vel facilisis.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra mecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra mecenas accumsan lacus vel facilisis.
                     </div>
+
+                    <div class="system-composition__show-more btn btn--primary">Раскрыть описание</div>
                 </div>
             </div>
 

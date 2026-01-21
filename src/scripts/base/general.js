@@ -9,6 +9,7 @@ import { slideUp, slideDown, slideToggle } from "../components/slide-toggle";
 import "../components/checkbox";
 import ShowBlockByTab from "../components/show-block-by-tab";
 import AnchorScroll from "../components/anchor-scroll";
+import ItcCustomSelect from "../components/itc-custom-select";
 
 document.addEventListener('DOMContentLoaded', () => {
 	new MaskPhone('input[type="tel"]');
@@ -41,10 +42,26 @@ document.addEventListener('DOMContentLoaded', () => {
 					keyboard: {
 						Escape: "close",
 					},
-				}
+				},
 			);
 		});
 	});
+
+	// ItcCustomSelect doctors
+	if (document.querySelector(".composition-select")) {
+		const select = new ItcCustomSelect(".composition-select");
+		// document.querySelector(".doctors-select").addEventListener("itc.select.change", (e) => {
+		// 	const btn = e.target.querySelector(".itc-select__toggle");
+		// 	// выбранное значение
+		// 	console.log(`Выбранное значение: ${btn.value}`);
+		// 	// индекс выбранной опции
+		// 	console.log(`Индекс выбранной опции: ${btn.dataset.index}`);
+		// 	// выбранный текст опции
+		// 	const selected = e.target.querySelector(".itc-select__option_selected");
+		// 	const text = selected ? selected.textContent : "";
+		// 	console.log(`Выбранный текст опции: ${text}`);
+		// });
+	}
 
 	// Сохраняем текущий URL и позицию прокрутки перед обновлением
 	window.addEventListener("beforeunload", () => {
@@ -84,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const firstOpenedItem = document.querySelector(".slide-down.opened");
 		if (firstOpenedItem) {
 			const firstContent = firstOpenedItem.querySelector(
-				".slide-down__content"
+				".slide-down__content",
 			);
 			// Правильное состояние для анимации
 			firstContent.style.display = "block";
@@ -120,4 +137,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Show/hide tank-solutions blocks
 	new ShowBlockByTab(".tank-solutions");
+	const tankTabs = document.querySelectorAll(".where-used__item");
+	tankTabs.forEach((tab) => {
+		tab.addEventListener("click", () => {
+			const dataTab = tab.dataset.tab;
+			const block = document.querySelector(
+				`.tank-solutions__item[data-tab="${dataTab}"]`,
+			);
+			if (!block) return;
+			block.click();
+		});
+	});
+
+	const smButtons = document.querySelectorAll(".system-composition__show-more");
+	smButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			const parent = button.parentNode;
+			const content = parent.querySelector(".system-composition__content");
+			content.classList.add("opened");
+			button.style.display = "none";
+		});
+	});
 });

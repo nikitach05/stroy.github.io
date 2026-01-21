@@ -1,3 +1,106 @@
+// .itc-select {
+//     position: relative;
+//     width: 100%;
+// }
+
+// .itc-select__toggle {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 100%;
+//     padding: r(12);
+//     @include font(r(16));
+//     background-color: var(--white);
+//     border: 1px solid var(--gray);
+//     border-radius: r(3);
+//     cursor: pointer;
+//     user-select: none;
+
+//     &::after {
+//         content: '';
+//         flex-shrink: 0;
+//         width: r(12);
+//         height: r(8);
+//         margin-left: r(10);
+//         background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 1L5 4L1.5 1' stroke='%23151B28' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+//         background-size: contain;
+//         background-repeat: no-repeat;
+//         transition: .25s;
+//     }
+
+//     &:focus {
+//         outline: none;
+//     }
+
+//     &[data-index="-1"] {
+//         color: var(--gray);
+//     }
+// }
+
+// .itc-select_show .itc-select__toggle::after {
+//     transform: rotate(180deg);
+// }
+
+// .itc-select__dropdown {
+//     position: absolute;
+//     top: 100%;
+//     right: 0;
+//     left: 0;
+//     z-index: 2;
+//     display: none;
+//     max-height: r(200);
+//     overflow-y: auto;
+//     background-color: var(--white);
+//     border: 1px solid var(--gray);
+//     border-radius: .3rem;
+// }
+
+// .itc-select_show {
+
+//     .itc-select__dropdown,
+//     .itc-select__backdrop {
+//         display: block;
+//     }
+// }
+
+// .itc-select__options {
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+// }
+
+// .itc-select__option {
+//     padding: 5px 10px;
+//     font-size: 14px;
+// }
+
+// .itc-select__option_selected {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     background-color: #e1f5fe;
+
+//     &::after {
+//         width: r(8);
+//         height: r(8);
+//         color: var(--primary);
+//         background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-inline--fa fa-check fa-w-16" data-icon="check" data-prefix="fas" aria-hidden="true"%3E%3Cpath d="M33.964 85.547l-32.5-32.251a4.935 4.935 0 010-7.017l7.071-7.017a5.027 5.027 0 017.071 0L37.5 60.987l46.894-46.534a5.028 5.028 0 017.07 0l7.072 7.017a4.935 4.935 0 010 7.017l-57.5 57.06a5.027 5.027 0 01-7.072 0z" fill="%230277bd"/%3E%3C/svg%3E');
+//         background-size: cover;
+//         content: "";
+//     }
+// }
+
+// .itc-select__option:hover {
+//     background-color: #f5f5f5;
+//     cursor: pointer;
+//     transition: 0.2s background-color ease-in-out;
+// }
+
+
+
+
+
+
 .itc-select {
     position: relative;
     width: 100%;
@@ -8,21 +111,26 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: r(12);
-    @include font(r(16));
-    background-color: var(--white);
-    border: 1px solid var(--gray);
-    border-radius: r(3);
+    min-height: r(70);
+    padding: r(12) r(16);
+    font-size: r(14);
+    font-weight: 600;
+    line-height: 110%;
+    text-align: left;
+    background-color: var(--primary);
+    text-transform: uppercase;
+    color: var(--white);
+    border-radius: r(8);
     cursor: pointer;
     user-select: none;
 
     &::after {
         content: '';
         flex-shrink: 0;
-        width: r(12);
-        height: r(8);
+        width: r(14);
+        height: r(14);
         margin-left: r(10);
-        background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 1L5 4L1.5 1' stroke='%23151B28' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='12' viewBox='0 0 14 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.92822 12L2.01226e-05 -1.30507e-06L13.8564 -9.36995e-08L6.92822 12Z' fill='white'/%3E%3C/svg%3E%0A");
         background-size: contain;
         background-repeat: no-repeat;
         transition: .25s;
@@ -33,12 +141,12 @@
     }
 
     &[data-index="-1"] {
-        color: var(--gray);
+        color: var(--text);
     }
 }
 
 .itc-select_show .itc-select__toggle::after {
-    transform: rotate(180deg);
+    transform: scaleY(-1);
 }
 
 .itc-select__dropdown {
@@ -48,11 +156,11 @@
     left: 0;
     z-index: 2;
     display: none;
-    max-height: r(200);
+    max-height: r(300);
+    padding: r(16) 0;
     overflow-y: auto;
-    background-color: var(--white);
-    border: 1px solid var(--gray);
-    border-radius: .3rem;
+    background-color: #cce2ed;
+    border-radius: r(8);
 }
 
 .itc-select_show {
@@ -70,19 +178,27 @@
 }
 
 .itc-select__option {
-    padding: 5px 10px;
-    font-size: 14px;
+    padding: r(12) r(42);
+    font-size: r(14);
+    font-weight: 600;
+    line-height: 110%;
+    text-transform: uppercase;
+    opacity: .5;
 }
 
 .itc-select__option_selected {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e1f5fe;
+    color: var(--primary);
+    opacity: 1;
 
-    &::after {
-        width: r(8);
-        height: r(8);
+    &::before {
+        position: absolute;
+        left: r(16);
+        top: auto;
+        width: r(12);
+        height: r(12);
         color: var(--primary);
         background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="svg-inline--fa fa-check fa-w-16" data-icon="check" data-prefix="fas" aria-hidden="true"%3E%3Cpath d="M33.964 85.547l-32.5-32.251a4.935 4.935 0 010-7.017l7.071-7.017a5.027 5.027 0 017.071 0L37.5 60.987l46.894-46.534a5.028 5.028 0 017.07 0l7.072 7.017a4.935 4.935 0 010 7.017l-57.5 57.06a5.027 5.027 0 01-7.072 0z" fill="%230277bd"/%3E%3C/svg%3E');
         background-size: cover;
@@ -91,7 +207,5 @@
 }
 
 .itc-select__option:hover {
-    background-color: #f5f5f5;
     cursor: pointer;
-    transition: 0.2s background-color ease-in-out;
 }
