@@ -17,9 +17,9 @@ export default class AnchorScroll {
 
     if (scrollTarget) {
       const elementPosition = scrollTarget.getBoundingClientRect().top;
-      const offsetPosition = elementPosition - this.topOffset;
+      const offsetPosition = elementPosition + window.pageYOffset - this.topOffset;
 
-      window.scrollBy({
+      window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });

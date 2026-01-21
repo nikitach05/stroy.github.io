@@ -8,9 +8,11 @@ import { MaskPhone } from '../components/input-masks';
 import { slideUp, slideDown, slideToggle } from "../components/slide-toggle";
 import "../components/checkbox";
 import ShowBlockByTab from "../components/show-block-by-tab";
+import AnchorScroll from "../components/anchor-scroll";
 
 document.addEventListener('DOMContentLoaded', () => {
 	new MaskPhone('input[type="tel"]');
+	new AnchorScroll();
 
 	Fancybox.bind("[data-fancybox]", {
 		Thumbs: {
@@ -115,4 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Show/hide system-composition blocks
 	new ShowBlockByTab(".system-composition");
+
+	// Show/hide tank-solutions blocks
+	new ShowBlockByTab(".tank-solutions");
 });
