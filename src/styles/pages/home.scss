@@ -1,7 +1,5 @@
 .main {
     position: relative;
-    min-height: slamp(r(460), r(555));
-    padding: slamp(r(32), r(56)) 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,7 +27,23 @@
 
     .container {
         position: relative;
+        min-height: slamp(r(460), r(555));
+        padding-top: slamp(r(32), r(56));
+        padding-bottom: slamp(r(32), r(56));
         z-index: 10;
+    }
+
+    &--v2 {
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: r(786);
+            padding-bottom: 0;
+
+            @include media('<sm') {
+                padding-bottom: r(20);
+            }
+        }
     }
 
     &__description {
@@ -64,6 +78,159 @@
 
             @include media('<xs') {
                 font-weight: 400;
+            }
+        }
+
+        &--v2 {
+            display: flex;
+            align-items: center;
+            gap: r(24) r(48);
+            margin: r(40) 0;
+
+            @include media('<sm') {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-bottom: r(40);
+                border-bottom: 1px solid var(--white);
+            }
+
+            .main {
+                &__list {
+                    &-item {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        gap: r(10);
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            right: r(-24);
+                            height: r(44);
+                            border-right: 1px solid var(--white);
+
+                            @include media('<sm') {
+                                display: none;
+                            }
+                        }
+
+                        &:last-child {
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                    
+                    &-icon {
+                        max-width: r(48);
+                    }
+
+                    &-text {
+                        width: max-content;
+                        margin: 0;
+                        font-weight: 400;
+                        font-size: slamp(r(14), r(16));
+
+                        @include media('<md') {
+                            width: auto;
+                            max-width: r(252);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__where-used {
+        margin-top: auto;
+    }
+}
+
+.where-used {
+    &__label {
+        margin: 0 0 slamp(r(16), r(24));
+        font-size: slamp(r(16), r(24));
+        font-weight: 600;
+    }
+    
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: r(10);
+
+        @include media('<sm') {
+            display: block;
+        }
+    }
+
+    &__item {
+        display: block;
+        padding: r(24);
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--white);
+        background: transparent;
+        transition: .3s;
+
+        @include media('<md') {
+            padding: r(16);
+        }
+
+        @include media('<sm') {
+            padding: 0;
+            margin: 0 0 slamp(r(20), r(28), $xxs, $sm);
+        }
+
+        @include media('>=sm') {
+            &:hover {
+                background: var(--primary);
+            }
+        
+            &:hover &-link {
+                opacity: 1;
+            }
+        }
+        
+        &-icon {
+            height: r(90);
+            width: auto;
+            max-width: r(140);
+            object-fit: contain;
+            filter:brightness(5) grayscale(5);
+
+            @include media('<md') {
+                height: r(60);
+                max-width: r(100);
+            }
+
+            @include media('<sm') {
+                height: r(50);
+                max-width: r(80);
+            }
+        }
+
+        &-text {
+            max-width: r(340);
+            margin: r(24) 0 0;
+            font-size: slamp(r(14), r(16));
+
+            @include media('<sm') {
+                margin: slamp(r(8), r(16), $xxs, $sm) 0 0;
+            }
+        }
+
+        &-link {
+            margin: r(16) 0 0;
+            font-weight: 600;
+            font-size: r(16);
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            opacity: 0;
+            transition: opacity .3s;
+
+            @include media('<sm') {
+                display: none;
             }
         }
     }
