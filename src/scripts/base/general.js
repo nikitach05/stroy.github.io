@@ -149,6 +149,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+	// Show/hide objects sliders
+	new ShowBlockByTab(".objects-section");
+
+	// Show/hide document blocks
+	new ShowBlockByTab(".documents-block");
+
 	const smButtons = document.querySelectorAll(".system-composition__show-more");
 	smButtons.forEach((button) => {
 		button.addEventListener("click", () => {
