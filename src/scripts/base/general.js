@@ -155,6 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Show/hide document blocks
 	new ShowBlockByTab(".documents-block");
 
+	// Show/hide tech blocks
+	new ShowBlockByTab(".tech-chars");
+
 	const smButtons = document.querySelectorAll(".system-composition__show-more");
 	smButtons.forEach((button) => {
 		button.addEventListener("click", () => {
@@ -164,4 +167,5 @@ document.addEventListener('DOMContentLoaded', () => {
 			button.style.display = "none";
 		});
 	});
+	
 });
