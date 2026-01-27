@@ -31,9 +31,46 @@
             </button>
         </div>
     </div>
+
+    <div class="container">
+        <a href="/page2.html" class="backlink">
+            <svg><use href="/src/assets/img/svg-sprite/sprite.svg#arrow"></use></svg>
+            <span>назад в гидроизоляцию</span>
+        </a>
+    </div>
 </section>
 
-<section class="main main--v2" style="background-image: url('/src/assets/img/image18.webp');">
+<ul class="fixed-nav">
+    <li class="fixed-nav__item">
+        <a href="#main" class="fixed-nav__item-link active"><span>Главная</span></a>
+    </li>
+    <li class="fixed-nav__item">
+        <a href="#steps" class="fixed-nav__item-link"><span>6 шагов</span></a>
+    </li>
+    <li class="fixed-nav__item">
+        <a href="#tank-solutions" class="fixed-nav__item-link"><span>Решения для резервуаров</span></a>
+    </li>
+    <li class="fixed-nav__item">
+        <a href="#composition" class="fixed-nav__item-link"><span>Состав системы</span></a>
+    </li>
+    <li class="fixed-nav__item">
+        <a href="#objects" class="fixed-nav__item-link"><span>Объекты</span></a>
+    </li>
+    <li class="fixed-nav__item">
+        <a href="#about-us" class="fixed-nav__item-link"><span>О компании</span></a>
+    </li>
+    <li class="fixed-nav__item">
+        <a href="#documents" class="fixed-nav__item-link"><span>Документы</span></a>
+    </li>
+    <li class="fixed-nav__item">
+        <a href="#tech-chars" class="fixed-nav__item-link"><span>Тех характеристики</span></a>
+    </li>
+    <li class="fixed-nav__item">
+        <a href="#faq" class="fixed-nav__item-link"><span>FAQ</span></a>
+    </li>
+</ul>
+
+<section class="main main--v2" id="main" style="background-image: url('/src/assets/img/image18.webp');">
     <div class="main__container container">
         <div class="main__title title">
             <h1>Гидроизоляция резервуаров</h1>
@@ -84,7 +121,7 @@
     </div>
 </section>
 
-<section class="steps p-indent">
+<section class="steps p-indent" id="steps">
     <div class="container">
         <div class="steps__title title">
             <h2>6 шагов к решению вашей задачи</h2>
@@ -254,8 +291,8 @@
         <div class="tank-solutions__content active" data-block="1">
             <div class="tank-solutions__content-label">Подходят системы:</div>
             <div class="tank-solutions__content-list">
-                <div class="tank-solutions__content-list-item">Резервуар с закрытой гидроизоляцией</div>
-                <div class="tank-solutions__content-list-item">Резервуар с открытой гидроизоляцией</div>
+                <a href="#composition" class="tank-solutions__content-list-item" data-system="1">Резервуар с закрытой гидроизоляцией</a>
+                <a href="#composition" class="tank-solutions__content-list-item" data-system="2">Резервуар с открытой гидроизоляцией</a>
             </div>
             <div class="tank-solutions__content-text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra mecenas accumsan lacus vel facilisis.</p>
@@ -265,8 +302,8 @@
         <div class="tank-solutions__content" data-block="2">
             <div class="tank-solutions__content-label">Подходят системы:</div>
             <div class="tank-solutions__content-list">
-                <div class="tank-solutions__content-list-item">Резервуар с закрытой гидроизоляцией</div>
-                <div class="tank-solutions__content-list-item">Резервуар с открытой гидроизоляцией</div>
+                <a href="#composition" class="tank-solutions__content-list-item" data-system="1">Резервуар с закрытой гидроизоляцией</a>
+                <a href="#composition" class="tank-solutions__content-list-item" data-system="2">Резервуар с открытой гидроизоляцией</a>
             </div>
             <div class="tank-solutions__content-text">
                 <p>Сборные резервуары из бетона. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra mecenas accumsan lacus vel facilisis 2.</p>
@@ -276,8 +313,8 @@
         <div class="tank-solutions__content" data-block="3">
             <div class="tank-solutions__content-label">Подходят системы:</div>
             <div class="tank-solutions__content-list">
-                <div class="tank-solutions__content-list-item">Резервуар с закрытой гидроизоляцией</div>
-                <div class="tank-solutions__content-list-item">Резервуар с открытой гидроизоляцией</div>
+                <a href="#composition" class="tank-solutions__content-list-item" data-system="1">Резервуар с закрытой гидроизоляцией</a>
+                <a href="#composition" class="tank-solutions__content-list-item" data-system="2">Резервуар с открытой гидроизоляцией</a>
             </div>
             <div class="tank-solutions__content-text">
                 <p>Резервуары для питьевой воды. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra mecenas accumsan lacus vel facilisis 3.</p>
@@ -287,8 +324,8 @@
         <div class="tank-solutions__content" data-block="4">
             <div class="tank-solutions__content-label">Подходят системы:</div>
             <div class="tank-solutions__content-list">
-                <div class="tank-solutions__content-list-item">Резервуар с закрытой гидроизоляцией</div>
-                <div class="tank-solutions__content-list-item">Резервуар с открытой гидроизоляцией</div>
+                <a href="#composition" class="tank-solutions__content-list-item" data-system="1">Резервуар с закрытой гидроизоляцией</a>
+                <a href="#composition" class="tank-solutions__content-list-item" data-system="2">Резервуар с открытой гидроизоляцией</a>
             </div>
             <div class="tank-solutions__content-text">
                 <p>Резервуары с высоким уровнем возможной деформации. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra mecenas accumsan lacus vel facilisis 4.</p>
@@ -297,7 +334,7 @@
     </div>
 </section>
 
-<section class="system-composition pb-indent">
+<section class="system-composition pb-indent" id="composition">
     <ul class="container">
         <div class="system-composition__head">
             <div class="system-composition__title title">
@@ -408,7 +445,7 @@
     </div>
 </section>
 
-<section class="form-section p-indent">
+<section class="form-section pt-indent">
     <div class="container">
         <div class="form-section__inner">
             <div class="form-section__title title title--small">
@@ -441,7 +478,7 @@
     </div>
 </section>
 
-<section class="objects-section pb-indent">
+<section class="objects-section p-indent" id="objects">
     <div class="container">
         <div class="objects-section__title title">
             <h2>Объекты</h2>
@@ -523,7 +560,7 @@
     </div>
 </section>
 
-<section class="about-us p-indent">
+<section class="about-us p-indent" id="about-us">
     <div class="container">
         <div class="about-us__title title">
             <h2>О компании</h2>
@@ -546,7 +583,7 @@
             </div>
         </div>
 
-        <div class="about-us__documents documents-block">
+        <div class="about-us__documents documents-block" id="documents">
             <div class="documents-block__title title title--small">
                 <h2>Документы</h2>
             </div>
@@ -605,7 +642,7 @@
     </div>
 </section>
 
-<section class="tech-chars p-indent">
+<section class="tech-chars p-indent" id="tech-chars">
     <div class="container">
         <div class="tech-chars__title title">
             <h2>Технические характеристики</h2>
@@ -661,7 +698,7 @@
     </div>
 </section>
 
-<section class="faq p-indent">
+<section class="faq p-indent" id="faq">
     <div class="container">
         <div class="faq__title title">
             <h2>Часто задаваемые вопросы</h2>

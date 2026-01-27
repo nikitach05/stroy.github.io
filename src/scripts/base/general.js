@@ -47,9 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
-	// ItcCustomSelect doctors
+	// ItcCustomSelect compositions
+	let selectCompositions;
 	if (document.querySelector(".composition-select")) {
-		const select = new ItcCustomSelect(".composition-select");
+		selectCompositions = new ItcCustomSelect(".composition-select");
 		// document.querySelector(".doctors-select").addEventListener("itc.select.change", (e) => {
 		// 	const btn = e.target.querySelector(".itc-select__toggle");
 		// 	// выбранное значение
@@ -134,6 +135,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Show/hide system-composition blocks
 	new ShowBlockByTab(".system-composition");
+	const systemTabs = document.querySelectorAll(
+		".tank-solutions__content-list-item",
+	);
+	systemTabs.forEach((tab) => {
+		tab.addEventListener("click", () => {
+			const dataTab = tab.dataset.system;
+			const block = document.querySelector(
+				`.system-composition .tabs__item[data-tab="${dataTab}"]`,
+			);
+			if (!block) return;
+			block.click();
+			Promise.resolve().then(() => block.classList.add("active"));
+
+			// Change value of the mobile select
+			const slectedItem = document.querySelector(`.composition-select .itc-select__option[data-tab="${dataTab}"]`);
+			if (!slectedItem) return;
+			slectedItem.click();
+		});
+	});
 
 	// Show/hide tank-solutions blocks
 	new ShowBlockByTab(".tank-solutions");
@@ -167,5 +187,38 @@ document.addEventListener('DOMContentLoaded', () => {
 			button.style.display = "none";
 		});
 	});
+
+	// Fixed navigation scroll handler
+	const fixedNav = document.querySelector(".fixed-nav");
+	const mainBlock = document.querySelector("#main");
 	
+	if (fixedNav && mainBlock) {
+		function handleScroll() {
+			const mainBlockBottom = mainBlock.offsetTop + mainBlock.offsetHeight;
+			const scrollPosition = window.scrollY + window.innerHeight / 2;
+			
+			if (scrollPosition > mainBlockBottom) {
+				fixedNav.classList.add("active");
+			} else {
+				fixedNav.classList.remove("active");
+			}
+		}
+		
+		// Initial check
+		handleScroll();
+		
+		// Listen to scroll events
+		window.addEventListener("scroll", handleScroll, { passive: true });
+	}
+
+	// Fixed navigation item click handler
+	const fixedNavLinks = document.querySelectorAll(".fixed-nav__item-link");
+	fixedNavLinks.forEach((link) => {
+		link.addEventListener("click", (e) => {
+			// Remove active class from all links
+			fixedNavLinks.forEach((l) => l.classList.remove("active"));
+			// Add active class to clicked link
+			link.classList.add("active");
+		});
+	});
 });

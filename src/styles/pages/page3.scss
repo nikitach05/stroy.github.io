@@ -105,10 +105,16 @@
             gap: r(6);
             
             &-item {
+                display: inline-flex;
                 color: var(--primary);
                 font-weight: 600;
                 font-size: slamp(r(14), r(16));
                 text-transform: uppercase;
+                text-decoration: none;
+
+                @include media('>=xs') {
+                    width: max-content;
+                }
             }
         }
 
@@ -471,7 +477,7 @@
     }
 
     &__documents {
-        margin: slamp(r(40), r(56)) 0 0;
+        padding: slamp(r(40), r(56)) 0 0;
     }
 }
 
