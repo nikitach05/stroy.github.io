@@ -313,6 +313,7 @@
                 pointer-events: none;
                 opacity: 0;
                 transition: .35s;
+                z-index: 800;
             }
 
             &.active {
