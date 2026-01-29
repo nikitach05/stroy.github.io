@@ -51,17 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	let selectCompositions;
 	if (document.querySelector(".composition-select")) {
 		selectCompositions = new ItcCustomSelect(".composition-select");
-		// document.querySelector(".doctors-select").addEventListener("itc.select.change", (e) => {
-		// 	const btn = e.target.querySelector(".itc-select__toggle");
-		// 	// выбранное значение
-		// 	console.log(`Выбранное значение: ${btn.value}`);
-		// 	// индекс выбранной опции
-		// 	console.log(`Индекс выбранной опции: ${btn.dataset.index}`);
-		// 	// выбранный текст опции
-		// 	const selected = e.target.querySelector(".itc-select__option_selected");
-		// 	const text = selected ? selected.textContent : "";
-		// 	console.log(`Выбранный текст опции: ${text}`);
-		// });
 	}
 
 	// Сохраняем текущий URL и позицию прокрутки перед обновлением
